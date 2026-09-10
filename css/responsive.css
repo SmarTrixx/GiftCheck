@@ -201,7 +201,7 @@
 
   /* Footer */
   .footer-inner {
-    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     gap: var(--space-6);
   }
 
@@ -347,7 +347,7 @@
 
   /* Section header */
   .section-header {
-    margin-bottom: var(--space-8);
+    margin-bottom: var(--space-5);
   }
 
   .section-title {
@@ -357,7 +357,7 @@
   /* Footer */
   .footer-inner {
     grid-template-columns: 1fr;
-    gap: var(--space-8);
+    gap: var(--space-5);
   }
 
   .footer-brand {
@@ -390,7 +390,7 @@
   }
 
   .hero-stats {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     gap: var(--space-4);
     padding-top: var(--space-4);
@@ -420,7 +420,7 @@
   }
 
   .verify-card-header {
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
     gap: var(--space-3);
   }
