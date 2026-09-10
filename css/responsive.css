@@ -201,7 +201,7 @@
 
   /* Footer */
   .footer-inner {
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 2fr 2fr;
     gap: var(--space-6);
   }
 
