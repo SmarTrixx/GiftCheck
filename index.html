@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Verify the authenticity of any gift card instantly. GiftCheck provides real-time validation, balance checking, and fraud detection for retailers and consumers." />
+  <meta name="theme-color" content="#0d1b2a" />
+
+  <!-- Open Graph -->
+  <meta property="og:title"       content="GiftCheck — Gift Card Verification" />
+  <meta property="og:description" content="Instantly verify any gift card's authenticity, balance, and validity." />
+  <meta property="og:type"        content="website" />
+  <meta property="og:image"       content="assets/images/gift-card.svg" />
+
+  <title>GiftCheck — Gift Card Verification</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+
+  <!-- HubSpot Live Chat
+       ─────────────────────────────────────────────────────────
+       Replace YOUR_PORTAL_ID with your HubSpot Hub ID.
+       Find it at: HubSpot → Settings → Account Setup → Account → Hub ID
+       Once set, the official HubSpot chat widget loads automatically.
+       The custom launcher button below opens the widget on click.
+       ───────────────────────────────────────────────────────── -->
+  <script type="text/javascript" id="hs-script-loader" async defer
+          src="//js.hs-scripts.com/YOUR_PORTAL_ID.js"></script>
+
+  <!-- EmailJS SDK (free client-side email sending, no server required)
+       ─────────────────────────────────────────────────────────
+       Steps to activate:
+       1. Sign up free at https://www.emailjs.com
+       2. Create a Service (Gmail / Outlook / etc.) → note the Service ID
+       3. Create an Email Template → note the Template ID
+       4. Copy your Public Key from Account → API Keys
+       5. Replace the three placeholders in js/main.js:
+            EMAILJS_PUBLIC_KEY, EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID
+       ───────────────────────────────────────────────────────── -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+
+<body>
+
+  <!-- ======================================================
+       NAVIGATION
+  ======================================================= -->
+  <header>
+    <nav class="site-nav" role="navigation" aria-label="Main navigation">
+      <div class="container nav-inner">
+
+        <!-- Logo -->
+        <a href="#" class="nav-logo" aria-label="GiftCheck home">
+          <img src="assets/logo/logo.svg" alt="GiftCheck" width="140" height="32" />
+        </a>
+
+        <!-- Desktop links -->
+        <ul class="nav-links" role="list">
+          <li><a href="#verify"       class="active">Verify Card</a></li>
+          <li><a href="#how">How It Works</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#satisfaction">Reviews</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+
+        <!-- Desktop CTA -->
+        <div class="nav-cta">
+          <a href="#verify" class="btn btn-primary btn-sm">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            Verify Now
+          </a>
+        </div>
+
+        <!-- Mobile hamburger -->
+        <button class="nav-hamburger" id="nav-hamburger"
+                aria-label="Toggle navigation menu"
+                aria-expanded="false"
+                aria-controls="nav-mobile-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+      </div><!-- /.nav-inner -->
+
+      <!-- Mobile dropdown menu -->
+      <nav id="nav-mobile-menu" class="nav-mobile-menu" aria-label="Mobile navigation">
+        <a href="#verify"       class="active">Verify Card</a>
+        <a href="#how">How It Works</a>
+        <a href="#features">Features</a>
+        <a href="#satisfaction">Reviews</a>
+        <a href="#about">About</a>
+        <a href="#faq">FAQ</a>
+        <a href="#verify" class="btn btn-primary btn-sm" style="margin: 1rem 1.5rem 0; justify-content: center;">
+          Verify Now
+        </a>
+      </nav>
+    </nav>
+  </header>
+
+
+  <main>
+
+    <!-- ======================================================
+         HERO
+    ======================================================= -->
+    <section class="hero" id="home" aria-labelledby="hero-heading">
+      <div class="container hero-inner">
+
+        <!-- Left: content -->
+        <div class="hero-content">
+
+          <span class="hero-badge" aria-label="Live service">
+            <span class="hero-badge-dot" aria-hidden="true"></span>
+            Live Verification Service
+          </span>
+
+          <h1 class="hero-heading" id="hero-heading">
+            Verify Gift Cards
+            <em>Instantly.</em>
+          </h1>
+
+          <p class="hero-subtext">
+            Authenticate any gift card in seconds. Check balance, expiry, and
+            issuer legitimacy — protecting buyers and sellers from fraud.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#verify" class="btn btn-primary btn-lg">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                   stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              Verify a Card
+            </a>
+            <a href="#how" class="btn btn-ghost btn-lg">
+              How it works
+            </a>
+          </div>
+
+          <div class="hero-stats" aria-label="Service statistics">
+            <div class="hero-stat">
+              <span class="hero-stat-value">2.4M+</span>
+              <span class="hero-stat-label">Cards Verified</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-value">99.9%</span>
+              <span class="hero-stat-label">Uptime</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-value">&lt; 2s</span>
+              <span class="hero-stat-label">Avg. Response</span>
+            </div>
+          </div>
+
+        </div><!-- /.hero-content -->
+
+        <!-- Right: gift card visual -->
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-card-wrap">
+            <img
+              class="hero-card-img hero-collage-img"
+              src="assets/images/gift-card.svg"
+              alt="Collection of supported gift card brands"
+              width="hero-card-wrap"
+              height="hero-card-wrap"
+              loading="eager"
+            />
+
+            <!-- Floating badge — top left -->
+            <div class="hero-float-badge hero-float-badge--tl" aria-hidden="true">
+              <div class="hero-float-badge-icon success">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <div class="hero-float-badge-text">
+                <span class="hero-float-badge-title">Verified</span>
+                <span class="hero-float-badge-sub">GC-2025-DELTA</span>
+              </div>
+            </div>
+
+            <!-- Floating badge — bottom right -->
+            <div class="hero-float-badge hero-float-badge--br" aria-hidden="true">
+              <div class="hero-float-badge-icon warning">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="8" x2="12" y2="12"></line>
+                  <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+              </div>
+              <div class="hero-float-badge-text">
+                <span class="hero-float-badge-title">Expired</span>
+                <span class="hero-float-badge-sub">GC-2020-ZULU</span>
+              </div>
+            </div>
+
+          </div><!-- /.hero-card-wrap -->
+        </div><!-- /.hero-visual -->
+
+      </div><!-- /.hero-inner -->
+    </section>
+
+
+    <!-- ======================================================
+         VERIFY SECTION
+    ======================================================= -->
+    <section class="verify-section" id="verify" aria-labelledby="verify-heading">
+      <div class="container">
+
+        <header class="section-header reveal">
+          <p class="section-label" aria-hidden="true">Verification Tool</p>
+          <h2 class="section-title" id="verify-heading">Check Your Gift Card</h2>
+          <p class="section-desc">
+            Select your card brand, enter the denomination and redemption code.
+            We'll verify authenticity and balance across 21 supported issuers — instantly.
+          </p>
+        </header>
+
+        <!-- Verification Card -->
+        <div class="verify-card reveal">
+
+          <div class="verify-card-header">
+            <div class="verify-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                   stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.25C17.25 22.15 21 17.25 21 12V7L12 2z"></path>
+                <polyline points="9 12 11 14 15 10"></polyline>
+              </svg>
+            </div>
+            <div>
+              <h3 class="verify-card-title">Verify Card Information</h3>
+              <p class="verify-card-subtitle">Secure · Instant · Free to use</p>
+            </div>
+          </div><!-- /.verify-card-header -->
+
+          <form class="verify-form" id="verify-form" novalidate aria-label="Gift card verification form">
+
+            <!-- 1. Card Brand Dropdown -->
+            <div class="form-group">
+              <label class="form-label" for="card-brand">Card Brand</label>
+              <select id="card-brand" name="card-brand" class="form-select" aria-required="true">
+                <option value="amazon">Amazon</option>
+                <option value="amex">Amex</option>
+                <option value="tt-visa">TT Visa</option>
+                <option value="visa-silvery">Visa Silvery White</option>
+                <option value="walmart-visa">Walmart Visa</option>
+                <option value="vanilla-visa">Vanilla Visa</option>
+                <option value="mastercard">MasterCard</option>
+                <option value="nike">Nike</option>
+                <option value="ebay">eBay</option>
+                <option value="steam">Steam</option>
+                <option value="apple-itunes">Apple iTunes</option>
+                <option value="google-play">Google Play</option>
+                <option value="american-express">American Express</option>
+                <option value="us-psn">US PSN</option>
+                <option value="razer-gold">Razer Gold</option>
+                <option value="spotify">Spotify</option>
+                <option value="nordstrom">Nordstrom</option>
+                <option value="sephora">Sephora</option>
+                <option value="hulu">Hulu</option>
+                <option value="visa-gift">Visa Gift</option>
+                <option value="us-paramount">US Paramount+</option>
+              </select>
+            </div>
+
+            <!-- 2. Currency + Amount row -->
+            <div class="form-row-2col">
+              <!-- Currency -->
+              <div class="form-group" style="margin:0;">
+                <label class="form-label" for="card-currency">Currency</label>
+                <select id="card-currency" name="card-currency" class="form-select" aria-required="true">
+                  <option value="USD">USD</option>
+                  <option value="EUR">EUR</option>
+                  <option value="BTC">BTC</option>
+                  <option value="GBP">GBP</option>
+                  <option value="CAD">CAD</option>
+                  <option value="CNY">CNY</option>
+                  <option value="JPY">JPY</option>
+                </select>
+              </div>
+
+              <!-- Amount -->
+              <div class="form-group" style="margin:0;">
+                <label class="form-label" for="card-amount">Card Amount</label>
+                <div class="form-input-wrap">
+                  <input
+                    type="number"
+                    id="card-amount"
+                    name="card-amount"
+                    class="form-input"
+                    placeholder="Card Amount"
+                    min="1"
+                    max="10000"
+                    step="0.01"
+                    autocomplete="off"
+                    aria-required="true"
+                    aria-describedby="card-amount-message"
+                  />
+                </div>
+                <p class="form-message" id="card-amount-message" role="alert" aria-live="polite"></p>
+              </div>
+            </div><!-- /.form-row-2col -->
+
+            <!-- 3. Redemption Code -->
+            <div class="form-group">
+              <div class="form-label-row">
+                <label class="form-label" for="card-id-input">
+                  Redemption Code
+                  <span class="form-label-hint">— printed on back of card</span>
+                </label>
+                <span class="code-char-counter" id="code-char-count" aria-live="polite">0/32</span>
+              </div>
+              <div class="form-input-wrap">
+                <input
+                  type="text"
+                  id="card-id-input"
+                  class="form-input redemption-code"
+                  name="card-id"
+                  placeholder="e.g. ABCD-1234-EFGH-5678"
+                  autocomplete="off"
+                  autocorrect="off"
+                  autocapitalize="characters"
+                  spellcheck="false"
+                  minlength="8"
+                  maxlength="32"
+                  aria-describedby="card-id-message code-char-count"
+                  aria-required="true"
+                />
+              </div>
+              <p class="form-message" id="card-id-message" role="alert" aria-live="polite"></p>
+              <p class="code-format-hint">
+                Accepted formats: <code>XXXX-XXXX-XXXX</code> · <code>GC-2025-ALPHA</code> · letters, numbers &amp; hyphens only
+              </p>
+            </div><!-- /.form-group -->
+
+            <!-- 4. Submit -->
+            <div class="verify-submit-wrap">
+              <button
+                type="submit"
+                id="verify-btn"
+                class="btn-continue"
+                aria-label="Continue with gift card verification"
+              >
+                <span class="btn-spinner" style="display:none;" aria-hidden="true"
+                      style="width:16px;height:16px;border:2px solid rgba(255,255,255,0.3);border-top-color:white;border-radius:50%;animation:spin 0.7s linear infinite;"></span>
+                <span class="btn-label">Continue</span>
+              </button>
+            </div>
+
+            <!-- Disclaimer -->
+            <p class="verify-disclaimer">
+              Enter your redemption code exactly as printed on the card. Verification is instant and end-to-end encrypted — we never log or retain your card data.
+            </p>
+
+          </form><!-- /#verify-form -->
+
+        </div><!-- /.verify-card -->
+
+      </div><!-- /.container -->
+    </section>
+
+
+    <!-- ======================================================
+         HOW IT WORKS
+    ======================================================= -->
+    <section class="how-section" id="how" aria-labelledby="how-heading">
+      <div class="container">
+
+        <header class="section-header reveal">
+          <p class="section-label" aria-hidden="true">Process</p>
+          <h2 class="section-title" id="how-heading">How It Works</h2>
+          <p class="section-desc">
+            Three steps stand between you and complete confidence in any gift card.
+          </p>
+        </header>
+
+        <ol class="steps-grid" aria-label="Verification steps">
+
+          <li class="step-card reveal">
+            <div class="step-number" aria-hidden="true">1</div>
+            <div class="step-icon" aria-hidden="true">🎴</div>
+            <h3 class="step-title">Enter Your Card ID</h3>
+            <p class="step-desc">
+              Locate the unique card ID printed on the back of your gift card
+              and type it into the verification field above.
+            </p>
+          </li>
+
+          <li class="step-card reveal">
+            <div class="step-number" aria-hidden="true">2</div>
+            <div class="step-icon" aria-hidden="true">🔍</div>
+            <h3 class="step-title">We Run the Check</h3>
+            <p class="step-desc">
+              Our system cross-references the card ID against issuer databases,
+              checking authenticity, balance, and validity in real time.
+            </p>
+          </li>
+
+          <li class="step-card reveal">
+            <div class="step-number" aria-hidden="true">3</div>
+            <div class="step-icon" aria-hidden="true">✅</div>
+            <h3 class="step-title">Get Your Result</h3>
+            <p class="step-desc">
+              Receive a clear, instant verdict: valid with remaining balance,
+              expired, or flagged as unrecognised — no guesswork needed.
+            </p>
+          </li>
+
+        </ol><!-- /.steps-grid -->
+
+      </div><!-- /.container -->
+    </section>
+
+
+    <!-- ======================================================
+         FEATURES
+    ======================================================= -->
+    <section class="features-section" id="features" aria-labelledby="features-heading">
+      <div class="container">
+
+        <header class="section-header reveal">
+          <p class="section-label" aria-hidden="true">Why GiftCheck</p>
+          <h2 class="section-title" id="features-heading">Built for Trust</h2>
+          <p class="section-desc">
+            Every feature is designed to give buyers and sellers complete
+            confidence before any transaction.
+          </p>
+        </header>
+
+        <ul class="features-grid" aria-label="Product features" role="list">
+
+          <li class="feature-card reveal">
+            <div class="feature-icon" aria-hidden="true">⚡</div>
+            <h3 class="feature-title">Instant Results</h3>
+            <p class="feature-desc">
+              Verification completes in under 2 seconds. No waiting, no
+              page reloads — results appear inline with full detail.
+            </p>
+          </li>
+
+          <li class="feature-card reveal">
+            <div class="feature-icon" aria-hidden="true">🔐</div>
+            <h3 class="feature-title">Fraud Detection</h3>
+            <p class="feature-desc">
+              Cards flagged as invalid are cross-checked against known
+              counterfeit patterns and reported issuer blocklists.
+            </p>
+          </li>
+
+          <li class="feature-card reveal">
+            <div class="feature-icon" aria-hidden="true">💰</div>
+            <h3 class="feature-title">Balance Display</h3>
+            <p class="feature-desc">
+              See the exact remaining balance on any active card,
+              so you know exactly what you're buying or receiving.
+            </p>
+          </li>
+
+          <li class="feature-card reveal">
+            <div class="feature-icon" aria-hidden="true">📋</div>
+            <h3 class="feature-title">Verification Reference</h3>
+            <p class="feature-desc">
+              Every check generates a unique reference ID you can share
+              with sellers as proof of a verified transaction.
+            </p>
+          </li>
+
+          <li class="feature-card reveal">
+            <div class="feature-icon" aria-hidden="true">🌐</div>
+            <h3 class="feature-title">Multi-Issuer Support</h3>
+            <p class="feature-desc">
+              Works across retail, premium, and corporate card programmes
+              from hundreds of partnered issuers worldwide.
+            </p>
+          </li>
+
+          <li class="feature-card reveal">
+            <div class="feature-icon" aria-hidden="true">🔒</div>
+            <h3 class="feature-title">Privacy First</h3>
+            <p class="feature-desc">
+              Card IDs are never stored or logged. Each check is ephemeral
+              and fully encrypted in transit.
+            </p>
+          </li>
+
+        </ul><!-- /.features-grid -->
+
+      </div><!-- /.container -->
+    </section>
+
+
+    <!-- ======================================================
+         FAQ
+    ======================================================= -->
+    <section class="faq-section" id="faq" aria-labelledby="faq-heading">
+      <div class="container">
+
+        <header class="section-header reveal">
+          <p class="section-label" aria-hidden="true">FAQ</p>
+          <h2 class="section-title" id="faq-heading">Common Questions</h2>
+          <p class="section-desc">
+            Everything you need to know about using GiftCheck.
+          </p>
+        </header>
+
+        <dl class="faq-list reveal" aria-label="Frequently asked questions">
+
+          <div class="faq-item">
+            <dt>
+              <button class="faq-question" aria-expanded="false"
+                      aria-controls="faq-answer-1" id="faq-btn-1">
+                Where do I find my Card ID?
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+            </dt>
+            <dd class="faq-answer" id="faq-answer-1" role="region" aria-labelledby="faq-btn-1">
+              <div class="faq-answer-inner">
+                Your Card ID is usually printed on the back of your gift card, either below the barcode
+                or next to the scratch-off PIN panel. It typically looks like a series of letters and
+                numbers separated by hyphens — for example, <code>GC-2025-ALPHA</code>.
+              </div>
+            </dd>
+          </div>
+
+          <div class="faq-item">
+            <dt>
+              <button class="faq-question" aria-expanded="false"
+                      aria-controls="faq-answer-2" id="faq-btn-2">
+                Is this service free to use?
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+            </dt>
+            <dd class="faq-answer" id="faq-answer-2" role="region" aria-labelledby="faq-btn-2">
+              <div class="faq-answer-inner">
+                Yes. Verification for individual consumers is completely free and unlimited. Business
+                and API access for high-volume integrations is available on our paid plans.
+              </div>
+            </dd>
+          </div>
+
+          <div class="faq-item">
+            <dt>
+              <button class="faq-question" aria-expanded="false"
+                      aria-controls="faq-answer-3" id="faq-btn-3">
+                How accurate is the verification?
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+            </dt>
+            <dd class="faq-answer" id="faq-answer-3" role="region" aria-labelledby="faq-btn-3">
+              <div class="faq-answer-inner">
+                GiftCheck queries issuer databases directly for supported card programmes, delivering
+                100% accurate results. For unsupported issuers, results reflect the card format's
+                structural validity rather than a live issuer lookup — this is always disclosed in
+                the result screen.
+              </div>
+            </dd>
+          </div>
+
+          <div class="faq-item">
+            <dt>
+              <button class="faq-question" aria-expanded="false"
+                      aria-controls="faq-answer-4" id="faq-btn-4">
+                Is my card data safe?
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+            </dt>
+            <dd class="faq-answer" id="faq-answer-4" role="region" aria-labelledby="faq-btn-4">
+              <div class="faq-answer-inner">
+                Absolutely. We do not store, log, or sell any card IDs you enter. Each verification
+                request is processed in memory and discarded immediately after the result is returned.
+                All data in transit is encrypted using TLS 1.3.
+              </div>
+            </dd>
+          </div>
+
+          <div class="faq-item">
+            <dt>
+              <button class="faq-question" aria-expanded="false"
+                      aria-controls="faq-answer-5" id="faq-btn-5">
+                What does "Card Not Found" mean?
+                <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+            </dt>
+            <dd class="faq-answer" id="faq-answer-5" role="region" aria-labelledby="faq-btn-5">
+              <div class="faq-answer-inner">
+                A "Card Not Found" result means the ID could not be matched to any known issuer record.
+                This may indicate the card is counterfeit, was never activated, or the ID was entered
+                incorrectly. Double-check the ID and try again — if the problem persists, contact the
+                card's original seller.
+              </div>
+            </dd>
+          </div>
+
+        </dl><!-- /.faq-list -->
+
+      </div><!-- /.container -->
+    </section>
+
+
+
+    <!-- ======================================================
+         CUSTOMER SATISFACTION
+    ======================================================= -->
+    <section class="satisfaction-section" id="satisfaction" aria-labelledby="satisfaction-heading">
+      <div class="container">
+
+        <header class="section-header reveal">
+          <p class="section-label" aria-hidden="true">Reviews</p>
+          <h2 class="section-title" id="satisfaction-heading">What Our Users Say</h2>
+          <p class="section-desc">
+            Trusted by millions of buyers, sellers, and businesses worldwide.
+          </p>
+        </header>
+
+        <!-- Overall rating + bar chart -->
+        <div class="satisfaction-overview reveal">
+
+          <div class="satisfaction-score">
+            <p class="satisfaction-number">4.8<span>/5</span></p>
+            <div class="star-row" aria-label="4.8 out of 5 stars">
+              <!-- 4 full stars -->
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <!-- 1 half star -->
+              <svg class="star half" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="satisfaction-reviews">Based on 14,800+ reviews</p>
+          </div>
+
+          <div class="satisfaction-bars" aria-label="Rating breakdown">
+            <div class="rating-bar-row">
+              <span class="rating-bar-label">5 ★</span>
+              <div class="rating-bar-track" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100" aria-label="5 star ratings">
+                <div class="rating-bar-fill" data-width="72"></div>
+              </div>
+              <span class="rating-bar-pct">72%</span>
+            </div>
+            <div class="rating-bar-row">
+              <span class="rating-bar-label">4 ★</span>
+              <div class="rating-bar-track" role="progressbar" aria-valuenow="18" aria-valuemin="0" aria-valuemax="100" aria-label="4 star ratings">
+                <div class="rating-bar-fill" data-width="18"></div>
+              </div>
+              <span class="rating-bar-pct">18%</span>
+            </div>
+            <div class="rating-bar-row">
+              <span class="rating-bar-label">3 ★</span>
+              <div class="rating-bar-track" role="progressbar" aria-valuenow="6" aria-valuemin="0" aria-valuemax="100" aria-label="3 star ratings">
+                <div class="rating-bar-fill" data-width="6"></div>
+              </div>
+              <span class="rating-bar-pct">6%</span>
+            </div>
+            <div class="rating-bar-row">
+              <span class="rating-bar-label">2 ★</span>
+              <div class="rating-bar-track" role="progressbar" aria-valuenow="3" aria-valuemin="0" aria-valuemax="100" aria-label="2 star ratings">
+                <div class="rating-bar-fill" data-width="3"></div>
+              </div>
+              <span class="rating-bar-pct">3%</span>
+            </div>
+            <div class="rating-bar-row">
+              <span class="rating-bar-label">1 ★</span>
+              <div class="rating-bar-track" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100" aria-label="1 star ratings">
+                <div class="rating-bar-fill" data-width="1"></div>
+              </div>
+              <span class="rating-bar-pct">1%</span>
+            </div>
+          </div>
+
+        </div><!-- /.satisfaction-overview -->
+
+       
+        <!-- Testimonials — rendered and rotated by JS (7 users, 3 visible) -->
+        <div class="testimonials-carousel reveal">
+          <div class="testimonials-grid" id="testimonials-grid" role="list"
+               aria-label="Customer reviews — rotating display" aria-live="polite">
+            <!-- Slots populated by initTestimonialsCarousel() in main.js -->
+          </div>
+          <!-- Dot indicators -->
+          <div class="testimonials-dots" id="testimonials-dots" aria-label="Review page indicators" role="tablist">
+          </div>
+        </div>
+
+      </div><!-- /.container -->
+    </section>
+
+
+    <!-- ======================================================
+         ABOUT US
+    ======================================================= -->
+    <section class="about-section" id="about" aria-labelledby="about-heading">
+      <div class="container">
+
+        <header class="section-header reveal">
+          <p class="section-label" aria-hidden="true">Our Story</p>
+          <h2 class="section-title" id="about-heading">About GiftCheck</h2>
+          <p class="section-desc">
+            We started with one conviction: nobody should lose money to a fraudulent gift card.
+          </p>
+        </header>
+
+        <!-- Mission block -->
+        <div class="about-mission reveal">
+          <div class="about-mission-content">
+            <h3 class="about-mission-heading">
+              Built to make gift card fraud<br>
+              <em>a thing of the past.</em>
+            </h3>
+            <p class="about-mission-text">
+              GiftCheck was founded in 2022 after our team witnessed first-hand how easily
+              counterfeit and depleted gift cards slipped through peer-to-peer transactions.
+              We built a verification engine that anyone — from a solo buyer to a large
+              retailer — can use for free.
+            </p>
+            <p class="about-mission-text">
+              Today we support 21 of the world's most popular card brands, process over
+              2.4 million verifications a month, and maintain 99.9% uptime across a
+              globally distributed infrastructure.
+            </p>
+            <div style="display:flex;gap:var(--space-4);margin-top:var(--space-2);">
+              <a href="#verify" class="btn btn-primary">Verify a Card</a>
+              <a href="#satisfaction" class="btn btn-ghost">Read Reviews</a>
+            </div>
+          </div>
+
+          <div class="about-mission-visual" aria-hidden="true">
+            <div class="about-orb">
+              <div class="about-orb-inner">🛡️</div>
+              <div class="about-orb-chip about-orb-chip--1">
+                <span>2.4M+</span> verifications / mo
+              </div>
+              <div class="about-orb-chip about-orb-chip--2">
+                Founded <span>2022</span>
+              </div>
+              <div class="about-orb-chip about-orb-chip--3">
+                <span>21</span> card brands
+              </div>
+            </div>
+          </div>
+        </div><!-- /.about-mission -->
+
+        <!-- Core values -->
+        <div class="about-values reveal">
+          <h3 class="section-title" style="text-align:left;margin-bottom:0;">Our Values</h3>
+          <div class="about-values-grid">
+
+
+            <div class="about-value-card">
+              <div class="about-value-icon" aria-hidden="true">🤝</div>
+              <h4 class="about-value-title">Access for Everyone</h4>
+              <p class="about-value-desc">
+                Fraud protection shouldn't be a premium feature. Our core
+                verification tool is free, unlimited, and always will be.
+              </p>
+            </div>
+
+
+            <div class="about-value-card">
+              <div class="about-value-icon" aria-hidden="true">🌍</div>
+              <h4 class="about-value-title">Global Reach</h4>
+              <p class="about-value-desc">
+                Our infrastructure spans multiple continents so users in Lagos,
+                London, and Los Angeles get the same reliable, fast experience.
+              </p>
+            </div>
+
+            <div class="about-value-card">
+              <div class="about-value-icon" aria-hidden="true">📈</div>
+              <h4 class="about-value-title">Continuous Improvement</h4>
+              <p class="about-value-desc">
+                Fraud tactics evolve constantly. We ship updates to our detection
+                engine weekly, staying ahead of the counterfeit card landscape.
+              </p>
+            </div>
+
+          </div>
+        </div><!-- /.about-values -->
+
+
+
+ 
+
+      </div><!-- /.container -->
+    </section>
+
+  </main><!-- /main -->
+
+
+  <!-- ======================================================
+       FOOTER
+  ======================================================= -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+
+      <div class="footer-inner">
+
+        <!-- Brand -->
+        <div class="footer-brand">
+          <img src="assets/logo/logo.svg" alt="GiftCheck" class="footer-logo" width="130" height="30" />
+          <p class="footer-tagline">
+            The trusted standard for gift card authenticity verification.
+          </p>
+        </div>
+
+        <!-- Product links -->
+        <nav aria-label="Product links">
+          <p class="footer-col-title">Product</p>
+          <ul class="footer-links" role="list">
+            <li><a href="#verify">Verify a Card</a></li>
+            <li><a href="#how">How It Works</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#satisfaction">Reviews</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </nav>
+
+        <!-- Company links -->
+        <nav aria-label="Company links">
+          <p class="footer-col-title">Company</p>
+          <ul class="footer-links" role="list">
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Newsroom</a></li>
+          </ul>
+        </nav>
+
+        <!-- Legal links -->
+        <!-- <nav aria-label="Legal links">
+          <p class="footer-col-title">Legal</p>
+          <ul class="footer-links" role="list">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Cookie Policy</a></li>
+            <li><a href="#">Security</a></li>
+          </ul>
+        </nav> -->
+
+      </div><!-- /.footer-inner -->
+
+      <div class="footer-bottom">
+        <p class="footer-copy">
+          &copy; <span id="footer-year">2025</span> GiftCheck Inc. All rights reserved.
+        </p>
+        <nav class="footer-legal-links" aria-label="Bottom legal links">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Cookies</a>
+        </nav>
+      </div><!-- /.footer-bottom -->
+
+    </div><!-- /.container -->
+  </footer>
+
+
+  <!-- ======================================================
+       RESULT MODAL
+  ======================================================= -->
+  <div
+    id="result-modal-backdrop"
+    class="modal-backdrop"
+    role="dialog"
+    aria-modal="false"
+    aria-hidden="true"
+    aria-labelledby="modal-title-text"
+  >
+    <div id="result-modal" class="modal" role="document">
+
+      <!-- Modal header -->
+      <div class="modal-header">
+        <h2 class="modal-title" id="modal-title-text">Verification Result</h2>
+        <button class="modal-close" aria-label="Close result modal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Modal body (populated by modal.js) -->
+      <div class="modal-body">
+        <!-- Status block — class toggled by JS: valid | expired | invalid -->
+        <div class="result-status-block valid" role="status" aria-live="polite">
+          <!-- Rendered by modal.js -->
+        </div>
+        <!-- Details table -->
+        <div class="result-details" aria-label="Card details">
+          <!-- Rendered by modal.js -->
+        </div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary modal-verify-again">
+          Verify Another Card
+        </button>
+      </div>
+
+    </div><!-- /#result-modal -->
+  </div><!-- /#result-modal-backdrop -->
+
+
+  <!-- ======================================================
+       HUBSPOT CHAT LAUNCHER
+       Custom button that opens the HubSpot chat widget.
+       When YOUR_PORTAL_ID is set, clicking this triggers the
+       official HubSpot messenger. Falls back gracefully before
+       the portal ID is configured.
+  ======================================================= -->
+  <div id="gc-chat-launcher" class="gc-chat-launcher" role="button"
+       tabindex="0" aria-label="Open live chat with support"
+       title="Chat with us">
+    <!-- Chat icon (default state) -->
+    <svg id="gc-chat-icon" class="gc-chat-launcher-icon" viewBox="0 0 24 24"
+         fill="none" stroke="currentColor" stroke-width="2"
+         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+    </svg>
+    <!-- Close icon (active state, hidden by default) -->
+    <svg id="gc-chat-close" class="gc-chat-launcher-icon" viewBox="0 0 24 24"
+         fill="none" stroke="currentColor" stroke-width="2.5"
+         stroke-linecap="round" stroke-linejoin="round"
+         aria-hidden="true" style="display:none;">
+      <line x1="18" y1="6" x2="6" y2="18"></line>
+      <line x1="6" y1="6" x2="18" y2="18"></line>
+    </svg>
+    <!-- Unread badge -->
+    <span class="gc-chat-badge" id="gc-chat-badge" aria-label="1 unread message">1</span>
+  </div>
+
+  <!-- Fallback chat panel shown when HubSpot portal ID is not yet configured -->
+  <div id="gc-chat-panel" class="gc-chat-panel" role="dialog"
+       aria-labelledby="gc-chat-panel-title" aria-hidden="true">
+    <div class="gc-chat-panel-header">
+      <div class="gc-chat-panel-agent">
+        <div class="gc-chat-agent-avatar" aria-hidden="true">GC</div>
+        <div class="gc-chat-agent-info">
+          <p class="gc-chat-agent-name" id="gc-chat-panel-title">GiftCheck Support</p>
+          <p class="gc-chat-agent-status">
+            <span class="gc-online-dot" aria-hidden="true"></span>
+            Online · Typically replies in minutes
+          </p>
+        </div>
+      </div>
+      <button class="gc-chat-panel-close" id="gc-chat-panel-close"
+              aria-label="Close chat panel">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <div class="gc-chat-panel-body" id="gc-chat-messages" role="log" aria-live="polite">
+      <!-- Agent greeting -->
+      <div class="gc-chat-msg gc-chat-msg--agent">
+        <div class="gc-msg-avatar" aria-hidden="true">GC</div>
+        <div class="gc-msg-bubble">
+          <p>👋 Hi there! Welcome to <strong>GiftCheck</strong>.</p>
+          <p>I'm here to help you verify gift cards, check balances, or answer any questions. How can I assist you today?</p>
+          <span class="gc-msg-time" aria-label="Message sent just now">Just now</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="gc-chat-panel-footer">
+      <div class="gc-chat-quick-replies" id="gc-chat-quick-replies" aria-label="Quick reply options">
+        <button class="gc-quick-reply" data-reply="How do I verify my card?">How do I verify my card?</button>
+        <button class="gc-quick-reply" data-reply="My card shows as invalid">My card shows as invalid</button>
+        <button class="gc-quick-reply" data-reply="I need help with a balance">I need help with a balance</button>
+      </div>
+      <form class="gc-chat-input-row" id="gc-chat-form" autocomplete="off">
+        <input
+          type="text"
+          id="gc-chat-input"
+          class="gc-chat-input"
+          placeholder="Write a message…"
+          maxlength="500"
+          aria-label="Type your message"
+        />
+        <button type="submit" class="gc-chat-send" aria-label="Send message">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+      </form>
+      <p class="gc-chat-branding">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        </svg>
+        Powered by GiftCheck Support
+      </p>
+    </div>
+  </div><!-- /#gc-chat-panel -->
+
+
+  <!-- ======================================================
+       SCRIPTS  (load order matters)
+  ======================================================= -->
+  <script src="js/verification.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Dynamic footer year -->
+  <script>
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

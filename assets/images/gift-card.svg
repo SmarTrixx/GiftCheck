@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 260" fill="none">
+  <!-- Card body -->
+  <rect width="420" height="260" rx="20" fill="#1a2e45"/>
+  <rect width="420" height="260" rx="20" fill="url(#cardGrad)" opacity="0.6"/>
+
+  <!-- Decorative circles -->
+  <circle cx="340" cy="-30" r="130" fill="#f77f00" opacity="0.08"/>
+  <circle cx="380" cy="280" r="100" fill="#f77f00" opacity="0.06"/>
+
+  <!-- Chip -->
+  <rect x="36" y="80" width="52" height="40" rx="6" fill="#c9a84c"/>
+  <rect x="36" y="80" width="52" height="40" rx="6" fill="url(#chipGrad)"/>
+  <line x1="36" y1="93" x2="88" y2="93" stroke="#a08030" stroke-width="1" opacity="0.6"/>
+  <line x1="36" y1="107" x2="88" y2="107" stroke="#a08030" stroke-width="1" opacity="0.6"/>
+  <line x1="54" y1="80" x2="54" y2="120" stroke="#a08030" stroke-width="1" opacity="0.6"/>
+  <line x1="70" y1="80" x2="70" y2="120" stroke="#a08030" stroke-width="1" opacity="0.6"/>
+
+  <!-- Card number row -->
+  <text x="36" y="170" font-family="'Courier New', monospace" font-size="20" fill="white" opacity="0.85" letter-spacing="3">•••• •••• •••• 4821</text>
+
+  <!-- Label row -->
+  <text x="36" y="210" font-family="'Inter', system-ui, sans-serif" font-size="11" fill="white" opacity="0.5" letter-spacing="1.5">GIFT CARD</text>
+  <text x="36" y="232" font-family="'Inter', system-ui, sans-serif" font-size="15" font-weight="600" fill="white" opacity="0.9">$50.00</text>
+
+  <!-- Brand logo area top-right -->
+  <rect x="330" y="24" width="58" height="32" rx="5" fill="#f77f00" opacity="0.9"/>
+  <text x="359" y="45" font-family="'Inter', system-ui, sans-serif" font-size="11" font-weight="700" fill="white" text-anchor="middle" letter-spacing="-0.2">GiftCheck</text>
+
+  <!-- Contactless icon -->
+  <path d="M112 98 Q120 90 120 100 Q120 110 112 102" stroke="white" stroke-width="1.8" stroke-linecap="round" fill="none" opacity="0.6"/>
+  <path d="M116 94 Q128 87 128 100 Q128 113 116 106" stroke="white" stroke-width="1.8" stroke-linecap="round" fill="none" opacity="0.4"/>
+
+  <defs>
+    <linearGradient id="cardGrad" x1="0" y1="0" x2="420" y2="260" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#2a4a6b"/>
+      <stop offset="100%" stop-color="#0d1b2a"/>
+    </linearGradient>
+    <linearGradient id="chipGrad" x1="36" y1="80" x2="88" y2="120" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#e8c96a"/>
+      <stop offset="100%" stop-color="#a07820"/>
+    </linearGradient>
+  </defs>
+</svg>

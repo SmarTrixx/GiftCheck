@@ -1,0 +1,204 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 620" fill="none">
+  <defs>
+    <!-- Drop shadow for each card -->
+    <filter id="card-shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="2" dy="6" stdDeviation="6" flood-color="rgba(0,0,0,0.28)"/>
+    </filter>
+    <!-- Isometric skew transform helper -->
+  </defs>
+
+  <!-- ══════════════════════════════════════
+       ROW 1 (top) — 3 cards
+  ════════════════════════════════════════ -->
+
+  <!-- Amazon -->
+  <g filter="url(#card-shadow)" transform="translate(270,20) rotate(-2)">
+    <rect width="130" height="82" rx="8" fill="#131921"/>
+    <text x="65" y="42" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="900" fill="white">amazon</text>
+    <rect x="20" y="52" width="90" height="4" rx="2" fill="#FF9900"/>
+    <path d="M100 60 Q110 65 103 70" stroke="#FF9900" stroke-width="2" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- App Store & iTunes -->
+  <g filter="url(#card-shadow)" transform="translate(415,10) rotate(1)">
+    <rect width="130" height="82" rx="8" fill="#f5f5f5"/>
+    <circle cx="65" cy="36" r="22" fill="url(#itunes-grad)"/>
+    <text x="65" y="68" text-anchor="middle" font-family="Arial,sans-serif" font-size="8.5" font-weight="600" fill="#555">App Store &amp; iTunes</text>
+    <defs>
+      <linearGradient id="itunes-grad" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#fc5c7d"/>
+        <stop offset="100%" stop-color="#6a82fb"/>
+      </linearGradient>
+    </defs>
+    <text x="65" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="white">♫</text>
+  </g>
+
+  <!-- Sling -->
+  <g filter="url(#card-shadow)" transform="translate(555,18) rotate(2)">
+    <rect width="130" height="82" rx="8" fill="#00aee4"/>
+    <text x="65" y="46" text-anchor="middle" font-family="Arial,sans-serif" font-size="26" font-weight="900" fill="white" letter-spacing="-1">sling</text>
+    <text x="65" y="62" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" fill="rgba(255,255,255,0.8)" letter-spacing="2">TELEVISION</text>
+  </g>
+
+  <!-- Netflix -->
+  <g filter="url(#card-shadow)" transform="translate(695,12) rotate(-1)">
+    <rect width="130" height="82" rx="8" fill="#e50914"/>
+    <text x="65" y="50" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="900" fill="white" letter-spacing="-0.5">NETFLIX</text>
+  </g>
+
+  <!-- ══════════════════════════════════════
+       ROW 2 — 4 cards
+  ════════════════════════════════════════ -->
+
+  <!-- eBay -->
+  <g filter="url(#card-shadow)" transform="translate(115,112) rotate(-1)">
+    <rect width="130" height="82" rx="8" fill="#f5f5f5"/>
+    <text x="26" y="52" font-family="Arial,sans-serif" font-size="30" font-weight="900" fill="#e53238">e</text>
+    <text x="50" y="52" font-family="Arial,sans-serif" font-size="30" font-weight="900" fill="#0064d2">b</text>
+    <text x="72" y="52" font-family="Arial,sans-serif" font-size="30" font-weight="900" fill="#f5af02">a</text>
+    <text x="93" y="52" font-family="Arial,sans-serif" font-size="30" font-weight="900" fill="#86b817">y</text>
+  </g>
+
+  <!-- PlayStation Store -->
+  <g filter="url(#card-shadow)" transform="translate(258,102) rotate(1)">
+    <rect width="130" height="82" rx="8" fill="#003087"/>
+    <rect width="130" height="82" rx="8" fill="url(#ps-grad)" opacity="0.5"/>
+    <text x="65" y="44" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" font-weight="700" fill="white" letter-spacing="0.5">PlayStation</text>
+    <text x="65" y="60" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="rgba(255,255,255,0.8)">Store</text>
+    <defs>
+      <linearGradient id="ps-grad" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#0070d1"/>
+        <stop offset="100%" stop-color="#00439c"/>
+      </linearGradient>
+    </defs>
+  </g>
+
+  <!-- Spotify -->
+  <g filter="url(#card-shadow)" transform="translate(400,110) rotate(-1)">
+    <rect width="130" height="82" rx="8" fill="#1db954"/>
+    <circle cx="65" cy="34" r="18" fill="black"/>
+    <path d="M50 28 Q65 22 80 28" stroke="#1db954" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M52 34 Q65 29 78 34" stroke="#1db954" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M54 40 Q65 36 76 40" stroke="#1db954" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <text x="65" y="66" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="white" letter-spacing="1">Spotify</text>
+  </g>
+
+  <!-- Paramount+ -->
+  <g filter="url(#card-shadow)" transform="translate(542,104) rotate(2)">
+    <rect width="130" height="82" rx="8" fill="#0064ff"/>
+    <text x="65" y="42" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" font-weight="800" fill="white" letter-spacing="0.5">Paramount</text>
+    <text x="65" y="58" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" font-weight="900" fill="white">+</text>
+  </g>
+
+  <!-- ══════════════════════════════════════
+       ROW 3 (middle) — 5 cards
+  ════════════════════════════════════════ -->
+
+  <!-- Google Play -->
+  <g filter="url(#card-shadow)" transform="translate(30,208) rotate(-2)">
+    <rect width="130" height="82" rx="8" fill="#f1f1f1"/>
+    <polygon points="35,28 35,54 58,41" fill="#EA4335"/>
+    <polygon points="35,28 70,41 58,41" fill="#FBBC04"/>
+    <polygon points="35,54 70,41 58,41" fill="#34A853"/>
+    <polygon points="58,41 95,28 95,54" fill="#4285F4"/>
+    <text x="65" y="72" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" font-weight="600" fill="#555">Google Play</text>
+  </g>
+
+  <!-- Riot Games (League/Valorant style) -->
+  <g filter="url(#card-shadow)" transform="translate(172,200) rotate(1)">
+    <rect width="130" height="82" rx="8" fill="#0a0a0a"/>
+    <rect x="0" y="0" width="130" height="82" rx="8" fill="url(#riot-grad)" opacity="0.7"/>
+    <text x="65" y="36" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" font-weight="800" fill="#d4af37" letter-spacing="2">RIOT</text>
+    <text x="65" y="52" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" fill="rgba(255,255,255,0.7)" letter-spacing="1">GAMES GIFT CARD</text>
+    <defs>
+      <linearGradient id="riot-grad" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#1e3a5f"/>
+        <stop offset="100%" stop-color="#0a0a0a"/>
+      </linearGradient>
+    </defs>
+  </g>
+
+  <!-- Nintendo eShop -->
+  <g filter="url(#card-shadow)" transform="translate(314,196) rotate(-1)">
+    <rect width="130" height="82" rx="8" fill="#e4000f"/>
+    <rect x="0" y="0" width="65" height="82" rx="0" fill="#e4000f"/>
+    <text x="65" y="30" text-anchor="middle" font-family="Arial,sans-serif" font-size="8.5" font-weight="800" fill="white" letter-spacing="1">Nintendo</text>
+    <text x="65" y="46" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" font-weight="800" fill="white">eShop</text>
+  </g>
+
+  <!-- Steam -->
+  <g filter="url(#card-shadow)" transform="translate(456,202) rotate(2)">
+    <rect width="130" height="82" rx="8" fill="#1b2838"/>
+    <circle cx="65" cy="35" r="18" fill="#c6d4df"/>
+    <circle cx="65" cy="35" r="12" fill="#1b2838"/>
+    <circle cx="65" cy="35" r="7" fill="#c6d4df"/>
+    <text x="65" y="66" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" font-weight="700" fill="#c6d4df" letter-spacing="2">STEAM</text>
+  </g>
+
+  <!-- Walmart -->
+  <g filter="url(#card-shadow)" transform="translate(596,198) rotate(-1)">
+    <rect width="130" height="82" rx="8" fill="#0071ce"/>
+    <text x="27" y="48" font-family="Arial,sans-serif" font-size="18" font-weight="900" fill="white">Walmart</text>
+    <text x="107" y="38" font-family="Arial,sans-serif" font-size="18" font-weight="900" fill="#ffc220">✦</text>
+  </g>
+
+  <!-- ══════════════════════════════════════
+       ROW 4 — 4 cards
+  ════════════════════════════════════════ -->
+
+  <!-- Hulu -->
+  <g filter="url(#card-shadow)" transform="translate(155,304) rotate(1)">
+    <rect width="130" height="82" rx="8" fill="#1ce783"/>
+    <text x="65" y="50" text-anchor="middle" font-family="Arial,sans-serif" font-size="28" font-weight="900" fill="#040405" letter-spacing="-1">hulu</text>
+  </g>
+
+  <!-- PlayStation Plus -->
+  <g filter="url(#card-shadow)" transform="translate(297,296) rotate(-1)">
+    <rect width="130" height="82" rx="8" fill="#003087"/>
+    <text x="65" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" font-weight="700" fill="white">PlayStation</text>
+    <rect x="42" y="46" width="46" height="16" rx="3" fill="#FFD700"/>
+    <text x="65" y="58" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" font-weight="800" fill="#003087">PLUS</text>
+  </g>
+
+  <!-- Sephora -->
+  <g filter="url(#card-shadow)" transform="translate(438,300) rotate(2)">
+    <rect width="130" height="82" rx="8" fill="#fff"/>
+    <rect x="0" y="0" width="130" height="82" rx="8" fill="#e8003d" opacity="0.9"/>
+    <text x="65" y="48" text-anchor="middle" font-family="Georgia,serif" font-size="16" font-weight="700" fill="white" letter-spacing="2">SEPHORA</text>
+  </g>
+
+  <!-- ══════════════════════════════════════
+       ROW 5 — 3 cards
+  ════════════════════════════════════════ -->
+
+  <!-- Razer Gold -->
+  <g filter="url(#card-shadow)" transform="translate(155,400) rotate(-1)">
+    <rect width="130" height="82" rx="8" fill="#1a1a1a"/>
+    <circle cx="42" cy="38" r="16" fill="#d4af37"/>
+    <text x="42" y="43" text-anchor="middle" font-family="Arial,sans-serif" font-size="14" font-weight="900" fill="#1a1a1a">R</text>
+    <text x="88" y="34" font-family="Arial,sans-serif" font-size="10" font-weight="700" fill="#d4af37">RAZER</text>
+    <text x="88" y="48" font-family="Arial,sans-serif" font-size="10" font-weight="700" fill="#d4af37">GOLD</text>
+  </g>
+
+  <!-- Xbox -->
+  <g filter="url(#card-shadow)" transform="translate(297,392) rotate(1)">
+    <rect width="130" height="82" rx="8" fill="#107c10"/>
+    <circle cx="65" cy="36" r="20" fill="black"/>
+    <text x="65" y="42" text-anchor="middle" font-family="Arial,sans-serif" font-size="14" font-weight="900" fill="#107c10">✕</text>
+    <text x="65" y="68" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" font-weight="700" fill="white" letter-spacing="2">XBOX</text>
+  </g>
+
+  <!-- Roblox -->
+  <g filter="url(#card-shadow)" transform="translate(438,396) rotate(-2)">
+    <rect width="130" height="82" rx="8" fill="#e02020"/>
+    <rect width="130" height="82" rx="8" fill="url(#roblox-grad)" opacity="0.6"/>
+    <text x="65" y="46" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" font-weight="900" fill="white" letter-spacing="-0.5">ROBLOX</text>
+    <defs>
+      <linearGradient id="roblox-grad" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#ff6b6b"/>
+        <stop offset="100%" stop-color="#b00000"/>
+      </linearGradient>
+    </defs>
+  </g>
+
+</svg>
