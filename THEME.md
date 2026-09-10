@@ -2,25 +2,25 @@
 
 ## Overview
 
-GiftCheck now supports **two complete themes**: **Dark** (default) and **Light** (white). Both themes are fully maintained and can be easily switched at runtime.
+GiftCheck now supports **two complete themes**: **Light** (default white) and **Dark**. Both themes are fully maintained and can be easily switched at runtime.
 
 ---
 
 ## Theme Modes
 
-### Dark Theme (Default)
+### Light Theme (Default)
+- **Primary Background**: `#ffffff` (white)
+- **Card Background**: `#f5f7fa` (light blue-gray)
+- **Text**: `#0d1b2a` (dark navy)
+- **Accent**: `#f77f00` (orange)
+- Best for: Day viewing, professional appearance, high contrast
+
+### Dark Theme
 - **Primary Background**: `#0d1b2a` (deep navy)
 - **Card Background**: `#142840` (lighter navy)
 - **Text**: `#f0f4f8` (off-white)
 - **Accent**: `#f77f00` (orange)
 - Best for: Night viewing, reduced eye strain, modern aesthetic
-
-### Light Theme
-- **Primary Background**: `#ffffff` (white)
-- **Card Background**: `#f5f7fa` (light blue-gray)
-- **Text**: `#0d1b2a` (dark navy)
-- **Accent**: `#f77f00` (orange, same)
-- Best for: Day viewing, professional appearance, high contrast
 
 ---
 
@@ -51,10 +51,10 @@ window.theme.setDark();
 window.theme.setLight();
 
 // Apply a theme programmatically
-window.theme.apply('light');
+window.theme.apply('dark');
 
 // Check system preference
-const systemPrefersLight = window.theme.systemPrefersLight();
+const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
 // Listen for theme changes
 document.addEventListener('themechange', (e) => {
@@ -67,15 +67,15 @@ document.addEventListener('themechange', (e) => {
 All colors are CSS custom properties, automatically updated when theme changes:
 
 ```css
-/* Dark theme (default in :root) */
---color-bg-primary: #0d1b2a;
---color-text-primary: #f0f4f8;
+/* Light theme (default in :root) */
+--color-bg-primary: #ffffff;
+--color-text-primary: #0d1b2a;
 --color-accent: #f77f00;
 
-/* Light theme (in [data-theme="light"]) */
-[data-theme="light"] {
-  --color-bg-primary: #ffffff;
-  --color-text-primary: #0d1b2a;
+/* Dark theme (in [data-theme="dark"]) */
+[data-theme="dark"] {
+  --color-bg-primary: #0d1b2a;
+  --color-text-primary: #f0f4f8;
   --color-accent: #f77f00; /* Same accent */
 }
 ```
@@ -104,9 +104,9 @@ giftcheck/
 1. **Initialization** (`theme.js`)
    - On page load, theme system checks for saved preference in localStorage
    - Falls back to system preference (OS light/dark mode)
-   - Defaults to **dark theme** if no preference found
+   - Defaults to **light theme** if no preference found
 
-2. **Application** (`<html data-theme="dark|light">`)
+2. **Application** (`<html data-theme="light|dark">`)
    - Theme is set via `data-theme` attribute on `<html>` element
    - All CSS variables update automatically
    - Custom `themechange` event fires for listeners

@@ -12,7 +12,7 @@ const LIGHT_THEME = 'light';
  * Initialize the theme system
  * - Restores saved preference from localStorage
  * - Falls back to system preference if no saved preference
- * - Defaults to dark theme if system preference cannot be determined
+ * - Defaults to light theme if system preference cannot be determined
  */
 function initTheme() {
   const savedTheme = localStorage.getItem(THEME_STORAGE_KEY);
@@ -23,10 +23,10 @@ function initTheme() {
     theme = savedTheme;
   } else {
     // Check system preference
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-      theme = LIGHT_THEME;
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      theme = DARK_THEME;
     } else {
-      theme = DARK_THEME; // Default
+      theme = LIGHT_THEME; // Default to light
     }
   }
 
@@ -39,8 +39,8 @@ function initTheme() {
  */
 function applyTheme(theme) {
   if (![DARK_THEME, LIGHT_THEME].includes(theme)) {
-    console.warn(`Invalid theme: ${theme}. Using dark.`);
-    theme = DARK_THEME;
+    console.warn(`Invalid theme: ${theme}. Using light.`);
+    theme = LIGHT_THEME;
   }
 
   // Set the attribute on html element
@@ -58,7 +58,7 @@ function applyTheme(theme) {
  * @returns {string} 'dark' or 'light'
  */
 function getCurrentTheme() {
-  return document.documentElement.getAttribute(THEME_ATTRIBUTE) || DARK_THEME;
+  return document.documentElement.getAttribute(THEME_ATTRIBUTE) || LIGHT_THEME;
 }
 
 /**

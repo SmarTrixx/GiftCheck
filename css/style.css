@@ -1,12 +1,7 @@
 /* ============================================================
-   GiftCheck — style.css
-   Main stylesheet: tokens, base, layout, components
-   ============================================================ */
-
-/* ============================================================
    THEME SYSTEM — Supports 'dark' and 'light' modes
    Set [data-theme="dark"] or [data-theme="light"] on <html>
-   Default: dark theme
+   Default: light theme (white)
    ============================================================ */
 
 /* ------------------------------------------------------------
@@ -16,38 +11,52 @@
 
 /* ------------------------------------------------------------
    2. Design Tokens (CSS Custom Properties)
-      Dark Theme (Default)
+      Light Theme (Default)
    ------------------------------------------------------------ */
 :root {
-  /* DARK THEME — Applied by default */
-  color-scheme: dark;
+  /* LIGHT THEME — Applied by default */
+  color-scheme: light;
 
   /* Colours */
-  --color-bg-primary:      #0d1b2a;
-  --color-bg-secondary:    #112236;
-  --color-bg-card:         #142840;
-  --color-bg-elevated:     #1a3050;
-  --color-bg-overlay:      rgba(7, 14, 22, 0.82);
+  --color-bg-primary:      #ffffff;
+  --color-bg-secondary:    #f8f9fb;
+  --color-bg-card:         #f5f7fa;
+  --color-bg-elevated:     #eff2f7;
+  --color-bg-overlay:      rgba(255, 255, 255, 0.88);
 
   --color-accent:          #f77f00;
   --color-accent-hover:    #e07200;
-  --color-accent-light:    rgba(247, 127, 0, 0.12);
-  --color-accent-subtle:   rgba(247, 127, 0, 0.06);
+  --color-accent-light:    rgba(247, 127, 0, 0.1);
+  --color-accent-subtle:   rgba(247, 127, 0, 0.04);
 
-  --color-text-primary:    #f0f4f8;
-  --color-text-secondary:  #8fa7be;
-  --color-text-muted:      #4e6a82;
-  --color-text-inverse:    #0d1b2a;
+  --color-text-primary:    #0d1b2a;
+  --color-text-secondary:  #4e6a82;
+  --color-text-muted:      #8fa7be;
+  --color-text-inverse:    #f0f4f8;
 
-  --color-border:          rgba(255, 255, 255, 0.07);
-  --color-border-focus:    rgba(247, 127, 0, 0.5);
+  --color-border:          rgba(0, 0, 0, 0.08);
+  --color-border-focus:    rgba(247, 127, 0, 0.4);
 
-  --color-success:         #22c55e;
-  --color-success-bg:      rgba(34, 197, 94, 0.1);
-  --color-error:           #ef4444;
-  --color-error-bg:        rgba(239, 68, 68, 0.1);
-  --color-warning:         #f59e0b;
-  --color-warning-bg:      rgba(245, 158, 11, 0.1);
+  --color-success:         #16a34a;
+  --color-success-bg:      rgba(22, 163, 74, 0.08);
+  --color-error:           #dc2626;
+  --color-error-bg:        rgba(220, 38, 38, 0.08);
+  --color-warning:         #d97706;
+  --color-warning-bg:      rgba(217, 119, 6, 0.08);
+
+  /* Shadows — Lighter for light theme */
+  --shadow-sm:   0 1px 3px rgba(0, 0, 0, 0.12);
+  --shadow-md:   0 4px 12px rgba(0, 0, 0, 0.15);
+  --shadow-lg:   0 8px 32px rgba(0, 0, 0, 0.18);
+  --shadow-xl:   0 16px 48px rgba(0, 0, 0, 0.22);
+  --shadow-accent: 0 4px 20px rgba(247, 127, 0, 0.18);
+
+  /* Shadows — Lighter for light theme */
+  --shadow-sm:   0 1px 3px rgba(0, 0, 0, 0.12);
+  --shadow-md:   0 4px 12px rgba(0, 0, 0, 0.15);
+  --shadow-lg:   0 8px 32px rgba(0, 0, 0, 0.18);
+  --shadow-xl:   0 16px 48px rgba(0, 0, 0, 0.22);
+  --shadow-accent: 0 4px 20px rgba(247, 127, 0, 0.18);
 
   /* Typography */
   --font-primary:          'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
@@ -90,13 +99,6 @@
   --radius-2xl:  24px;
   --radius-full: 9999px;
 
-  /* Shadows */
-  --shadow-sm:   0 1px 3px rgba(0, 0, 0, 0.3);
-  --shadow-md:   0 4px 12px rgba(0, 0, 0, 0.4);
-  --shadow-lg:   0 8px 32px rgba(0, 0, 0, 0.5);
-  --shadow-xl:   0 16px 48px rgba(0, 0, 0, 0.6);
-  --shadow-accent: 0 4px 20px rgba(247, 127, 0, 0.25);
-
   /* Transitions */
   --transition-fast:   150ms ease;
   --transition-base:   250ms ease;
@@ -109,44 +111,44 @@
 }
 
 /* ───────────────────────────────────────────────────────────
-   LIGHT THEME — Applied when [data-theme="light"]
+   DARK THEME — Applied when [data-theme="dark"]
    ─────────────────────────────────────────────────────────── */
-[data-theme="light"] {
-  color-scheme: light;
+[data-theme="dark"] {
+  color-scheme: dark;
 
-  /* Colours — Light palette */
-  --color-bg-primary:      #ffffff;
-  --color-bg-secondary:    #f8f9fb;
-  --color-bg-card:         #f5f7fa;
-  --color-bg-elevated:     #eff2f7;
-  --color-bg-overlay:      rgba(255, 255, 255, 0.88);
+  /* Colours — Dark palette */
+  --color-bg-primary:      #0d1b2a;
+  --color-bg-secondary:    #112236;
+  --color-bg-card:         #142840;
+  --color-bg-elevated:     #1a3050;
+  --color-bg-overlay:      rgba(7, 14, 22, 0.82);
 
   --color-accent:          #f77f00;
   --color-accent-hover:    #e07200;
-  --color-accent-light:    rgba(247, 127, 0, 0.1);
-  --color-accent-subtle:   rgba(247, 127, 0, 0.04);
+  --color-accent-light:    rgba(247, 127, 0, 0.12);
+  --color-accent-subtle:   rgba(247, 127, 0, 0.06);
 
-  --color-text-primary:    #0d1b2a;
-  --color-text-secondary:  #4e6a82;
-  --color-text-muted:      #8fa7be;
-  --color-text-inverse:    #f0f4f8;
+  --color-text-primary:    #f0f4f8;
+  --color-text-secondary:  #8fa7be;
+  --color-text-muted:      #4e6a82;
+  --color-text-inverse:    #0d1b2a;
 
-  --color-border:          rgba(0, 0, 0, 0.08);
-  --color-border-focus:    rgba(247, 127, 0, 0.4);
+  --color-border:          rgba(255, 255, 255, 0.07);
+  --color-border-focus:    rgba(247, 127, 0, 0.5);
 
-  --color-success:         #16a34a;
-  --color-success-bg:      rgba(22, 163, 74, 0.08);
-  --color-error:           #dc2626;
-  --color-error-bg:        rgba(220, 38, 38, 0.08);
-  --color-warning:         #d97706;
-  --color-warning-bg:      rgba(217, 119, 6, 0.08);
+  --color-success:         #22c55e;
+  --color-success-bg:      rgba(34, 197, 94, 0.1);
+  --color-error:           #ef4444;
+  --color-error-bg:        rgba(239, 68, 68, 0.1);
+  --color-warning:         #f59e0b;
+  --color-warning-bg:      rgba(245, 158, 11, 0.1);
 
-  /* Shadows — Lighter for light theme */
-  --shadow-sm:   0 1px 3px rgba(0, 0, 0, 0.12);
-  --shadow-md:   0 4px 12px rgba(0, 0, 0, 0.15);
-  --shadow-lg:   0 8px 32px rgba(0, 0, 0, 0.18);
-  --shadow-xl:   0 16px 48px rgba(0, 0, 0, 0.22);
-  --shadow-accent: 0 4px 20px rgba(247, 127, 0, 0.18);
+  /* Shadows — Darker for dark theme */
+  --shadow-sm:   0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md:   0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg:   0 8px 32px rgba(0, 0, 0, 0.5);
+  --shadow-xl:   0 16px 48px rgba(0, 0, 0, 0.6);
+  --shadow-accent: 0 4px 20px rgba(247, 127, 0, 0.25);
 }
 
 /* ------------------------------------------------------------
@@ -486,22 +488,26 @@ input, textarea, select {
   transform: translate(-50%, -50%);
 }
 
+/* Light theme (default): show sun icon to switch to dark */
 .btn-theme-toggle .theme-icon-dark {
-  opacity: 1;
-}
-
-.btn-theme-toggle .theme-icon-light {
-  opacity: 0;
-}
-
-[data-theme="light"] .btn-theme-toggle .theme-icon-dark {
   opacity: 0;
   display: none;
 }
 
-[data-theme="light"] .btn-theme-toggle .theme-icon-light {
+.btn-theme-toggle .theme-icon-light {
   opacity: 1;
   display: block;
+}
+
+/* Dark theme: show moon icon to switch to light */
+[data-theme="dark"] .btn-theme-toggle .theme-icon-dark {
+  opacity: 1;
+  display: block;
+}
+
+[data-theme="dark"] .btn-theme-toggle .theme-icon-light {
+  opacity: 0;
+  display: none;
 }
 
 /* Loading spinner inside button */
