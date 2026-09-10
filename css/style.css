@@ -30,8 +30,8 @@
   --color-accent-subtle:   rgba(247, 127, 0, 0.04);
 
   --color-text-primary:    #0d1b2a;
-  --color-text-secondary:  #4e6a82;
-  --color-text-muted:      #8fa7be;
+  --color-text-secondary:  #3f5b74;
+  --color-text-muted:      #516d86;
   --color-text-inverse:    #f0f4f8;
 
   --color-border:          rgba(0, 0, 0, 0.08);
@@ -64,9 +64,9 @@
   /* Typography */
   --font-primary:          'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
   --font-mono:             'Courier New', 'Courier', monospace;
-
-  --text-xs:    0.75rem;    /* 12px */
-  --text-sm:    0.875rem;   /* 14px */
+ 
+  --text-xs:    0.85rem;    /* 12px */
+  --text-sm:    0.975rem;   /* 14px */
   --text-base:  1rem;       /* 16px */
   --text-lg:    1.125rem;   /* 18px */
   --text-xl:    1.25rem;    /* 20px */
@@ -132,8 +132,8 @@
   --color-accent-subtle:   rgba(247, 127, 0, 0.06);
 
   --color-text-primary:    #f0f4f8;
-  --color-text-secondary:  #8fa7be;
-  --color-text-muted:      #4e6a82;
+  --color-text-secondary:  #8caac4;
+  --color-text-muted:      #8ea8be;
   --color-text-inverse:    #0d1b2a;
 
   --color-border:          rgba(255, 255, 255, 0.07);
@@ -755,7 +755,7 @@ input, textarea, select {
   position: absolute;
   top: 0;
   right: 0;
-  width: 48%;
+  width:88%;
   height: 100%;
   background:
     linear-gradient(to right, var(--color-bg-secondary) 0%, transparent 25%),
@@ -1773,11 +1773,11 @@ input, textarea, select {
 /* Disclaimer note below the form */
 .verify-disclaimer {
   margin-top: var(--space-5);
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
   color: var(--color-text-muted);
   text-align: center;
   line-height: var(--leading-relaxed);
-  font-style: italic;
+  font-weight: 400;
   padding: var(--space-4) var(--space-5);
   background-color: rgba(255,255,255,0.02);
   border: 1px solid var(--color-border);
