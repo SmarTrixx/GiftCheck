@@ -1094,7 +1094,7 @@ input, textarea, select {
    9. How It Works Section
    ------------------------------------------------------------ */
 .how-section {
-  padding-block: var(--space-24);
+  padding-block: var(--space-10);
 }
 
 .steps-grid {
@@ -1173,7 +1173,7 @@ input, textarea, select {
    10. Features / Trust Section
    ------------------------------------------------------------ */
 .features-section {
-  padding-block: var(--space-24);
+  padding-block: var(--space-5);
   background-color: var(--color-bg-secondary);
   position: relative;
 }
@@ -1239,7 +1239,7 @@ input, textarea, select {
    11. FAQ Section
    ------------------------------------------------------------ */
 .faq-section {
-  padding-block: var(--space-24);
+  padding-block: var(--space-5);
 }
 
 .faq-list {
@@ -1812,7 +1812,7 @@ input, textarea, select {
    16. Customer Satisfaction Section
    ------------------------------------------------------------ */
 .satisfaction-section {
-  padding-block: var(--space-24);
+  padding-block: var(--space-10);
   background-color: var(--color-bg-primary);
   position: relative;
 }
@@ -2069,7 +2069,7 @@ input, textarea, select {
    17. About Us Section
    ------------------------------------------------------------ */
 .about-section {
-  padding-block: var(--space-24);
+  padding-block: var(--space-15);
   background-color: var(--color-bg-secondary);
   position: relative;
 }
@@ -2086,10 +2086,10 @@ input, textarea, select {
 .about-mission {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--space-16);
+  gap: var(--space-5);
   align-items: center;
-  margin-bottom: var(--space-16);
-  padding-bottom: var(--space-16);
+  margin-bottom: var(--space-10);
+  padding-bottom: var(--space-10);
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -2180,21 +2180,21 @@ input, textarea, select {
 
 /* Values grid */
 .about-values {
-  margin-bottom: var(--space-16);
+  margin-bottom: var(--space-10);
 }
 
 .about-values-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-5);
-  margin-top: var(--space-8);
+  margin-top: var(--space-10);
 }
 
 .about-value-card {
   background-color: var(--color-bg-card);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-xl);
-  padding: var(--space-6);
+  padding: var(--space-4);
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
@@ -2208,7 +2208,7 @@ input, textarea, select {
 
 .about-value-icon {
   width: 44px;
-  height: 44px;
+  height: 4px;
   border-radius: var(--radius-lg);
   background-color: var(--color-accent-light);
   border: 1px solid rgba(247,127,0,0.15);
@@ -2220,7 +2220,7 @@ input, textarea, select {
 
 .about-value-title {
   font-size: var(--text-base);
-  font-weight: 700;
+  font-weight: 800;
   color: var(--color-text-primary);
 }
 
@@ -2235,7 +2235,7 @@ input, textarea, select {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: var(--space-5);
-  margin-top: var(--space-8);
+  margin-top: var(--space-2);
 }
 
 .team-card {
