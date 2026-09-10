@@ -875,6 +875,41 @@ function injectShakeKeyframe() {
 }
 
 /* ----------------------------------------------------------
+   Theme Toggle Handler
+   ---------------------------------------------------------- */
+function initThemeToggle() {
+  const toggleBtn = document.getElementById('theme-toggle');
+  if (!toggleBtn) return;
+
+  // Sync button visibility with current theme
+  function updateThemeUI() {
+    const isDark = window.theme?.getCurrent?.() === 'dark' ?? 
+                   document.documentElement.getAttribute('data-theme') === 'dark';
+    const iconDark = toggleBtn.querySelector('.theme-icon-dark');
+    const iconLight = toggleBtn.querySelector('.theme-icon-light');
+    
+    if (isDark) {
+      iconDark?.style.setProperty('display', 'block', 'important');
+      iconLight?.style.setProperty('display', 'none', 'important');
+    } else {
+      iconDark?.style.setProperty('display', 'none', 'important');
+      iconLight?.style.setProperty('display', 'block', 'important');
+    }
+  }
+
+  // Listen for theme changes
+  document.addEventListener('themechange', updateThemeUI);
+  
+  // Handle button click
+  toggleBtn.addEventListener('click', () => {
+    window.theme?.toggle?.();
+  });
+
+  // Initialize UI
+  updateThemeUI();
+}
+
+/* ----------------------------------------------------------
    Boot
    ---------------------------------------------------------- */
 document.addEventListener('DOMContentLoaded', () => {
@@ -895,4 +930,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollReveal();
   initChatWidget();
   initTestimonialsCarousel();
+  initThemeToggle();
 });

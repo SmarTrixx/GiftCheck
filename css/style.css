@@ -3,6 +3,12 @@
    Main stylesheet: tokens, base, layout, components
    ============================================================ */
 
+/* ============================================================
+   THEME SYSTEM — Supports 'dark' and 'light' modes
+   Set [data-theme="dark"] or [data-theme="light"] on <html>
+   Default: dark theme
+   ============================================================ */
+
 /* ------------------------------------------------------------
    1. Google Fonts Import
    ------------------------------------------------------------ */
@@ -10,8 +16,12 @@
 
 /* ------------------------------------------------------------
    2. Design Tokens (CSS Custom Properties)
+      Dark Theme (Default)
    ------------------------------------------------------------ */
 :root {
+  /* DARK THEME — Applied by default */
+  color-scheme: dark;
+
   /* Colours */
   --color-bg-primary:      #0d1b2a;
   --color-bg-secondary:    #112236;
@@ -96,6 +106,47 @@
   --container-max:  1200px;
   --container-pad:  var(--space-6);
   --nav-height:     70px;
+}
+
+/* ───────────────────────────────────────────────────────────
+   LIGHT THEME — Applied when [data-theme="light"]
+   ─────────────────────────────────────────────────────────── */
+[data-theme="light"] {
+  color-scheme: light;
+
+  /* Colours — Light palette */
+  --color-bg-primary:      #ffffff;
+  --color-bg-secondary:    #f8f9fb;
+  --color-bg-card:         #f5f7fa;
+  --color-bg-elevated:     #eff2f7;
+  --color-bg-overlay:      rgba(255, 255, 255, 0.88);
+
+  --color-accent:          #f77f00;
+  --color-accent-hover:    #e07200;
+  --color-accent-light:    rgba(247, 127, 0, 0.1);
+  --color-accent-subtle:   rgba(247, 127, 0, 0.04);
+
+  --color-text-primary:    #0d1b2a;
+  --color-text-secondary:  #4e6a82;
+  --color-text-muted:      #8fa7be;
+  --color-text-inverse:    #f0f4f8;
+
+  --color-border:          rgba(0, 0, 0, 0.08);
+  --color-border-focus:    rgba(247, 127, 0, 0.4);
+
+  --color-success:         #16a34a;
+  --color-success-bg:      rgba(22, 163, 74, 0.08);
+  --color-error:           #dc2626;
+  --color-error-bg:        rgba(220, 38, 38, 0.08);
+  --color-warning:         #d97706;
+  --color-warning-bg:      rgba(217, 119, 6, 0.08);
+
+  /* Shadows — Lighter for light theme */
+  --shadow-sm:   0 1px 3px rgba(0, 0, 0, 0.12);
+  --shadow-md:   0 4px 12px rgba(0, 0, 0, 0.15);
+  --shadow-lg:   0 8px 32px rgba(0, 0, 0, 0.18);
+  --shadow-xl:   0 16px 48px rgba(0, 0, 0, 0.22);
+  --shadow-accent: 0 4px 20px rgba(247, 127, 0, 0.18);
 }
 
 /* ------------------------------------------------------------
@@ -391,6 +442,66 @@ input, textarea, select {
 
 .btn-full {
   width: 100%;
+}
+
+/* Theme Toggle Button */
+.btn-theme-toggle {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background-color: transparent;
+  border: 1.5px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color var(--transition-fast),
+              border-color var(--transition-fast),
+              color var(--transition-fast);
+  color: var(--color-text-secondary);
+  position: relative;
+}
+
+.btn-theme-toggle:hover {
+  background-color: rgba(247, 127, 0, 0.08);
+  border-color: rgba(247, 127, 0, 0.3);
+  color: var(--color-accent);
+}
+
+.btn-theme-toggle:active {
+  transform: scale(0.96);
+}
+
+.btn-theme-toggle svg {
+  width: 18px;
+  height: 18px;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.btn-theme-toggle .theme-icon-dark,
+.btn-theme-toggle .theme-icon-light {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.btn-theme-toggle .theme-icon-dark {
+  opacity: 1;
+}
+
+.btn-theme-toggle .theme-icon-light {
+  opacity: 0;
+}
+
+[data-theme="light"] .btn-theme-toggle .theme-icon-dark {
+  opacity: 0;
+  display: none;
+}
+
+[data-theme="light"] .btn-theme-toggle .theme-icon-light {
+  opacity: 1;
+  display: block;
 }
 
 /* Loading spinner inside button */
