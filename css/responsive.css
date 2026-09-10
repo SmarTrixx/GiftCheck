@@ -84,8 +84,8 @@
 
   /* Hero: stack to single column */
   .hero {
-    padding-top: calc(var(--space-16) + var(--space-4));
-    padding-bottom: var(--space-16);
+    padding-top: calc(var(--space-6) + var(--space-4));
+    padding-bottom: var(--space-6);
   }
 
   .hero-inner {
@@ -141,7 +141,7 @@
   .how-section,
   .features-section,
   .faq-section {
-    padding-block: var(--space-16);
+    padding-block: var(--space-10);
   }
 
   .section-title {
@@ -264,7 +264,7 @@
   /* Floating badges: hide on very small screens to avoid overflow */
   .hero-float-badge--tl,
   .hero-float-badge--br {
-    display: none;
+    display: flex;
   }
 
   /* Features: single column */
