@@ -20,9 +20,9 @@
 /* ----------------------------------------------------------
    EmailJS — replace these three values to activate email sending
    ---------------------------------------------------------- */
-const EMAILJS_PUBLIC_KEY   = 'ZSxNfdMc-lQvFk1n-';
-const EMAILJS_SERVICE_ID   = 'service_bfictjc';
-const EMAILJS_TEMPLATE_ID  = 'template_o8fgj7d';
+const EMAILJS_PUBLIC_KEY   = '_P_vwiLMH0DYYxBQa';
+const EMAILJS_SERVICE_ID   = 'service_qtjpz3b';
+const EMAILJS_TEMPLATE_ID  = 'template_8rssnv2';
 // Flag is true as long as the key is not the original placeholder string
 const EMAILJS_CONFIGURED   = EMAILJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY';
 
