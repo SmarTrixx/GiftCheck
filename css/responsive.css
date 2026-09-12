@@ -1,5 +1,5 @@
 /* ============================================================
-   GiftCheck — responsive.css
+   GiftsChecker — responsive.css
    Breakpoint overrides: 1024px, 768px, 640px, 480px
    ============================================================ */
 
@@ -347,7 +347,7 @@
 
   /* Section header */
   .section-header {
-    margin-bottom: var(--space-5);
+    margin-bottom: var(--space-10);
   }
 
   .section-title {
@@ -616,7 +616,7 @@
   }
 
   .about-orb-chip {
-    display: none;
+    display: flex;
   }
 
   .timeline-list {

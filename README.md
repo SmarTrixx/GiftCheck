@@ -1,4 +1,4 @@
-# GiftCheck — Gift Card Verification Website
+# GiftsChecker — Gift Card Verification Website
 
 A polished, responsive gift card authenticity verification landing page built with semantic HTML5, modern CSS3, and Vanilla JavaScript. No frameworks, no build tools, no dependencies — open `index.html` in a browser and it works.
 
@@ -26,7 +26,7 @@ giftcheck/
 │   ├── icons/
 │   │   └── favicon.svg         # Browser tab icon
 │   └── logo/
-│       └── logo.svg            # GiftCheck wordmark
+│       └── logo.svg            # GiftsChecker wordmark
 │
 ├── README.md
 └── .gitignore
@@ -85,7 +85,7 @@ Any other card ID produces a **deterministic** result derived from a djb2 hash o
 - **Known cards**: 20 explicit entries in `CARD_DATABASE` with fixed outcomes.
 - **Unknown cards**: A djb2 hash of the uppercased card ID maps to one of three buckets — 40% valid, 20% expired, 40% invalid. No `Math.random()` is used anywhere in the result path.
 - **ID validation**: Allows letters, digits, and hyphens; 4–32 characters.
-- All functions are exposed on the `window.GiftCheck` namespace.
+- All functions are exposed on the `window.GiftsChecker` namespace.
 
 ### Modal (`js/modal.js`)
 

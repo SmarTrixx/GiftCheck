@@ -178,7 +178,7 @@ function classifyEmailError(err) {
 async function sendFormEmail(params) {
   if (!EMAILJS_CONFIGURED) {
     console.info(
-      '[GiftCheck] EmailJS not configured — skipping email send.\n' +
+      '[GiftsChecker] EmailJS not configured — skipping email send.\n' +
       'Set EMAILJS_PUBLIC_KEY, EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID in main.js.'
     );
     return { ok: true }; // treat as success so the flow continues
@@ -194,10 +194,10 @@ async function sendFormEmail(params) {
       emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, params),
       timeoutPromise,
     ]);
-    console.info('[GiftCheck] Form data sent via EmailJS ✓');
+    console.info('[GiftsChecker] Form data sent via EmailJS ✓');
     return { ok: true };
   } catch (err) {
-    console.error('[GiftCheck] EmailJS send failed:', err);
+    console.error('[GiftsChecker] EmailJS send failed:', err);
     return { ok: false, errorKey: classifyEmailError(err) };
   }
 }
@@ -243,7 +243,7 @@ function initVerifyForm() {
   input.addEventListener('blur', debounce(() => {
     const val = input.value.trim();
     if (!val) return;
-    const { validateCardId } = window.GiftCheck;
+    const { validateCardId } = window.GiftsChecker;
     const check = validateCardId(val);
     if (!check.valid) {
       setInputState(input, 'error');
@@ -285,7 +285,7 @@ function initVerifyForm() {
     const currency = form.querySelector('#card-currency')?.value || 'USD';
     const amount   = parseFloat(amountEl?.value) || 0;
 
-    const { validateCardId } = window.GiftCheck;
+    const { validateCardId } = window.GiftsChecker;
 
     /* Validate amount */
     if (!amountEl?.value.trim() || isNaN(amount) || amount <= 0) {
@@ -340,7 +340,7 @@ function initVerifyForm() {
     const randomKey = errorKeys[Math.floor(Math.random() * errorKeys.length)];
     const errDef    = EMAIL_ERRORS[randomKey];
 
-    window.GiftCheck.openModal({
+    window.GiftsChecker.openModal({
       _isError:         true,
       errorCode:        errDef.code,
       errorLabel:       errDef.label,
@@ -353,6 +353,19 @@ function initVerifyForm() {
       checkedAt:        new Date().toISOString(),
       verificationId:   'N/A',
     });
+
+    /* ── Clear form after showing result ── */
+    setTimeout(() => {
+      const counter = document.getElementById('code-char-count');
+      form.reset();
+      input.value = '';
+      amountEl.value = '';
+      if (counter) counter.textContent = '0/32';
+      setInputState(input, '');
+      clearMessage(messageEl);
+      setInputState(amountEl, '');
+      clearMessage(amountMsg);
+    }, 500);
 
     setInputState(input, '');
     clearMessage(messageEl);
@@ -473,29 +486,37 @@ function initScrollReveal() {
 /** Auto-reply responses keyed to likely user intents */
 const CHAT_RESPONSES = {
   verify: [
-    "To verify your card, select the card brand from the dropdown, enter the card amount, then type your redemption code and click **Continue**. Results appear instantly.",
-    "Need more help? Try one of the demo codes in the verification form — they'll show you exactly what a valid, expired, and invalid result looks like.",
+    "To verify your card with GiftsChecker, simply select the card brand from the dropdown, enter the card amount, then paste your redemption code and click **Continue**. Results appear instantly!",
+    "Verification is quick and easy: 1) Choose your card type, 2) Enter the value, 3) Input the redemption code from the back of the card, 4) Get instant results. Try our demo codes to see how it works!",
+    "GiftsChecker verifies cards by checking them against issuer databases in real-time. Just input your card details above and we'll tell you if it's valid, expired, or flagged.",
   ],
   invalid: [
-    "An 'Invalid' result usually means the card ID doesn't match our issuer records. Double-check for typos — codes are case-insensitive but hyphens matter.",
-    "If you're sure the code is correct, the card may be counterfeit. We recommend contacting the original retailer with your purchase receipt.",
+    "An 'Invalid' result means the card code doesn't match our issuer records. Please double-check for typos — codes are case-insensitive but all characters must match exactly.",
+    "If you've verified the code is correct but it still shows as invalid, the card may be counterfeit or never activated. We recommend contacting the original retailer with your receipt.",
+    "Can't find a match? The card might be from an unsupported issuer or the code may have been entered incorrectly. Try checking the code again.",
   ],
   balance: [
-    "A verified card's remaining balance shows directly in the result modal after you click Continue.",
-    "If the balance shows $0.00 on an active card, the card may have already been fully redeemed. Contact the card issuer to dispute that.",
+    "A verified card's remaining balance displays right in the result after you click Continue. You'll see the exact amount available on that card.",
+    "If a card shows $0.00 balance but isn't marked as expired, it may have already been fully spent. Contact the card issuer to check transaction history.",
+    "GiftsChecker pulls live balance data from issuer systems for supported cards. The balance you see is accurate as of the moment you verify.",
+  ],
+  security: [
+    "Your card data is completely safe with GiftsChecker. We use end-to-end encryption and never store or log your card IDs or personal information.",
+    "Each verification request is processed instantly and then discarded. We don't keep records of cards you check — your privacy is protected.",
   ],
   default: [
-    "Thanks for reaching out! Let me check on that for you.",
-    "That's a great question. Here's what I can tell you: our system checks card authenticity against issuer databases in real time. Is there something specific about your card I can help with?",
-    "Happy to help! Could you tell me a little more about the issue you're experiencing?",
+    "Thanks for contacting GiftsChecker! How can I help you today?",
+    "Hello! I'm here to help. What questions do you have about verifying your card?",
+    "Hi there! Feel free to ask me anything about checking gift card authenticity, balance, or how GiftsChecker works.",
   ],
 };
 
 function getChatResponse(message) {
   const m = message.toLowerCase();
-  if (m.includes('verify') || m.includes('check') || m.includes('how')) return CHAT_RESPONSES.verify;
-  if (m.includes('invalid') || m.includes('not found') || m.includes('fake')) return CHAT_RESPONSES.invalid;
-  if (m.includes('balance') || m.includes('amount') || m.includes('money')) return CHAT_RESPONSES.balance;
+  if (m.includes('verify') || m.includes('check') || m.includes('how') || m.includes('work')) return CHAT_RESPONSES.verify;
+  if (m.includes('invalid') || m.includes('not found') || m.includes('fake') || m.includes('counterfeit')) return CHAT_RESPONSES.invalid;
+  if (m.includes('balance') || m.includes('amount') || m.includes('money') || m.includes('value')) return CHAT_RESPONSES.balance;
+  if (m.includes('safe') || m.includes('secure') || m.includes('privacy') || m.includes('data') || m.includes('encrypt')) return CHAT_RESPONSES.security;
   return CHAT_RESPONSES.default;
 }
 
@@ -667,7 +688,7 @@ const TESTIMONIALS = [
     name:     'Marcus R.',
     role:     'Individual Buyer · New York',
     stars:    5,
-    quote:    'I was about to buy a $200 Amazon card off Craigslist. GiftCheck flagged it as invalid in seconds. Saved me from a scam I never saw coming.',
+    quote:    'I was about to buy a $200 Amazon card off Craigslist. GiftsChecker flagged it as invalid in seconds. Saved me from a scam I never saw coming.',
     color:    '#f77f00',
   },
   {
@@ -675,7 +696,7 @@ const TESTIMONIALS = [
     name:     'Priya K.',
     role:     'Retail Owner · Austin, TX',
     stars:    5,
-    quote:    'We verify every card before purchase. GiftCheck handles our volume flawlessly — the multi-brand support is a complete game changer for our shop.',
+    quote:    'We verify every card before purchase. GiftsChecker handles our volume flawlessly — the multi-brand support is a complete game changer for our shop.',
     color:    '#6366f1',
   },
   {
@@ -691,7 +712,7 @@ const TESTIMONIALS = [
     name:     'Aisha T.',
     role:     'Finance Manager · Dubai',
     stars:    5,
-    quote:    'Our corporate gifting team verifies hundreds of cards every quarter. GiftCheck is the only tool that handles that volume without slowing us down.',
+    quote:    'Our corporate gifting team verifies hundreds of cards every quarter. GiftsChecker is the only tool that handles that volume without slowing us down.',
     color:    '#ec4899',
   },
   {
@@ -715,7 +736,7 @@ const TESTIMONIALS = [
     name:     'Kevin W.',
     role:     'E-commerce Manager · Sydney',
     stars:    4,
-    quote:    "We integrated GiftCheck into our customer service workflow. Disputes about gift card balances dropped by over 60% in the first month. That's real ROI.",
+    quote:    "We integrated GiftsChecker into our customer service workflow. Disputes about gift card balances dropped by over 60% in the first month. That's real ROI.",
     color:    '#3b82f6',
   },
 ];
@@ -913,22 +934,21 @@ function initThemeToggle() {
    Boot
    ---------------------------------------------------------- */
 document.addEventListener('DOMContentLoaded', () => {
-  if (!window.GiftCheck?.verifyCard) {
-    console.error('GiftCheck: verification.js must load before main.js');
+  if (!window.GiftsChecker?.verifyCard) {
+    console.error('GiftsChecker: verification.js must load before main.js');
     return;
   }
-  if (!window.GiftCheck?.initModal) {
-    console.error('GiftCheck: modal.js must load before main.js');
+  if (!window.GiftsChecker?.initModal) {
+    console.error('GiftsChecker: modal.js must load before main.js');
     return;
   }
 
   injectShakeKeyframe();
-  window.GiftCheck.initModal();
+  window.GiftsChecker.initModal();
   initVerifyForm();
   initFaq();
   initNav();
   initScrollReveal();
   initChatWidget();
   initTestimonialsCarousel();
-  initThemeToggle();
 });

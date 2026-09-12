@@ -1,8 +1,8 @@
-# GiftCheck Theme System
+# GiftsChecker Theme System
 
 ## Overview
 
-GiftCheck now supports **two complete themes**: **Light** (default white) and **Dark**. Both themes are fully maintained and can be easily switched at runtime.
+GiftsChecker now supports **two complete themes**: **Light** (default white) and **Dark**. Both themes are fully maintained and can be easily switched at runtime.
 
 ---
 

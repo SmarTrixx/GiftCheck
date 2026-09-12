@@ -1,7 +1,7 @@
 /**
  * modal.js
  * Modal open / close / render logic.
- * Depends on: verification.js (for GiftCheck.formatBalance, getStatusCopy)
+ * Depends on: verification.js (for GiftsChecker.formatBalance, getStatusCopy)
  */
 
 'use strict';
@@ -74,7 +74,7 @@ function capitalise(str) {
 /**
  * Render the result into the modal body and footer.
  * Handles both normal verification results and email error states.
- * @param {object} result  — output of GiftCheck.verifyCard() OR an error object
+ * @param {object} result  — output of GiftsChecker.verifyCard() OR an error object
  */
 function renderResult(result) {
   const statusBlock = _modal.querySelector('.result-status-block');
@@ -131,7 +131,7 @@ function renderResult(result) {
   }
 
   /* ─── Normal verification result ──────────────────────── */
-  const { formatBalance, getStatusCopy } = window.GiftCheck;
+  const { formatBalance, getStatusCopy } = window.GiftsChecker;
   const { status, balance, currency, type, issued, expires,
           issuer, cardId, checkedAt, verificationId,
           declaredAmount, declaredCurrency, cardBrand } = result;
@@ -188,7 +188,7 @@ function renderResult(result) {
 
 /**
  * Open the modal and render verification results.
- * @param {object} result  — output of GiftCheck.verifyCard()
+ * @param {object} result  — output of GiftsChecker.verifyCard()
  */
 function openModal(result) {
   if (!_backdrop || !_modal) return;
@@ -280,7 +280,7 @@ function initModal() {
   _modal    = document.getElementById('result-modal');
 
   if (!_backdrop || !_modal) {
-    console.warn('GiftCheck: modal elements not found in DOM.');
+    console.warn('GiftsChecker: modal elements not found in DOM.');
     return;
   }
 
@@ -301,9 +301,9 @@ function initModal() {
   document.addEventListener('keydown', trapFocus);
 }
 
-/* Expose to GiftCheck namespace */
-window.GiftCheck = window.GiftCheck || {};
-Object.assign(window.GiftCheck, {
+/* Expose to GiftsChecker namespace */
+window.GiftsChecker = window.GiftsChecker || {};
+Object.assign(window.GiftsChecker, {
   initModal,
   openModal,
   closeModal,

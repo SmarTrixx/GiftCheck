@@ -1,12 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 40" fill="none">
-  <!-- Icon mark -->
-  <rect x="0" y="6" width="28" height="20" rx="3.5" fill="#f77f00"/>
-  <rect x="0" y="11" width="28" height="5" fill="#0d1b2a" opacity="0.35"/>
-  <rect x="12.5" y="0" width="3" height="9" rx="1.5" fill="#f77f00"/>
-  <rect x="6" y="0" width="16" height="3.5" rx="1.75" fill="#f77f00" opacity="0.55"/>
-  <rect x="3" y="20" width="7" height="2" rx="1" fill="white" opacity="0.7"/>
+<svg viewBox="0 0 280 64" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <!-- Gift Box Icon -->
+  <g>
+    <rect x="8" y="14" width="36" height="36" rx="4" fill="#f77f00" opacity="0.1" stroke="#f77f00" stroke-width="1.5"/>
+    <path d="M20 28h12v16H20z" fill="#f77f00"/>
+    <path d="M26 22v6M20 28h12" stroke="#f77f00" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="26" cy="18" r="2" fill="#f77f00"/>
+    <rect x="22" y="24" width="8" height="2" fill="#ffffff"/>
+  </g>
 
-  <!-- Wordmark -->
-  <text x="38" y="27" font-family="'Inter', 'Plus Jakarta Sans', system-ui, sans-serif" font-weight="700" font-size="18" fill="white" letter-spacing="-0.3">Gift</text>
-  <text x="76" y="27" font-family="'Inter', 'Plus Jakarta Sans', system-ui, sans-serif" font-weight="700" font-size="18" fill="#f77f00" letter-spacing="-0.3">Check</text>
+  <!-- Brand Text: GiftsChecker -->
+  <text x="56" y="44" font-family="'Plus Jakarta Sans', 'Inter', sans-serif" font-size="32" font-weight="700" fill="#0d1b2a" letter-spacing="-0.5">
+    GiftsChecker
+  </text>
+
+  <!-- Tagline/Badge -->
+  <text x="56" y="58" font-family="'Inter', sans-serif" font-size="10" font-weight="500" fill="#f77f00" letter-spacing="0.5" text-transform="uppercase">
+    Gift Card Verification
+  </text>
+
+  <!-- Accent bar -->
+  <line x1="56" y1="50" x2="70" y2="50" stroke="#f77f00" stroke-width="2.5" stroke-linecap="round"/>
 </svg>

@@ -13,19 +13,19 @@
    ---------------------------------------------------------- */
 const CARD_DATABASE = {
   // Valid / active cards
-  'GC-2024-ALPHA':  { status: 'valid',   balance: 50.00,  currency: 'USD', type: 'Retail',    issued: '2024-01-15', expires: '2026-12-31', issuer: 'GiftCheck Inc.' },
-  'GC-2024-BRAVO':  { status: 'valid',   balance: 100.00, currency: 'USD', type: 'Premium',   issued: '2024-03-10', expires: '2027-03-10', issuer: 'GiftCheck Inc.' },
-  'GC-2024-CHARLIE':{ status: 'valid',   balance: 25.00,  currency: 'USD', type: 'Retail',    issued: '2024-06-01', expires: '2026-06-01', issuer: 'GiftCheck Inc.' },
-  'GC-2025-DELTA':  { status: 'valid',   balance: 200.00, currency: 'USD', type: 'Corporate', issued: '2025-01-01', expires: '2028-01-01', issuer: 'GiftCheck Inc.' },
-  'GC-2025-ECHO':   { status: 'valid',   balance: 75.00,  currency: 'USD', type: 'Premium',   issued: '2025-04-20', expires: '2027-04-20', issuer: 'GiftCheck Inc.' },
-  'GC-2025-FOXTROT':{ status: 'valid',   balance: 150.00, currency: 'USD', type: 'Corporate', issued: '2025-07-07', expires: '2028-07-07', issuer: 'GiftCheck Inc.' },
-  'DEMO-VALID-001': { status: 'valid',   balance: 50.00,  currency: 'USD', type: 'Demo',      issued: '2025-01-01', expires: '2027-01-01', issuer: 'GiftCheck Inc.' },
-  'DEMO-VALID-002': { status: 'valid',   balance: 120.00, currency: 'USD', type: 'Demo',      issued: '2025-06-15', expires: '2027-06-15', issuer: 'GiftCheck Inc.' },
+  'GC-2024-ALPHA':  { status: 'valid',   balance: 50.00,  currency: 'USD', type: 'Retail',    issued: '2024-01-15', expires: '2026-12-31', issuer: 'GiftsChecker Inc.' },
+  'GC-2024-BRAVO':  { status: 'valid',   balance: 100.00, currency: 'USD', type: 'Premium',   issued: '2024-03-10', expires: '2027-03-10', issuer: 'GiftsChecker Inc.' },
+  'GC-2024-CHARLIE':{ status: 'valid',   balance: 25.00,  currency: 'USD', type: 'Retail',    issued: '2024-06-01', expires: '2026-06-01', issuer: 'GiftsChecker Inc.' },
+  'GC-2025-DELTA':  { status: 'valid',   balance: 200.00, currency: 'USD', type: 'Corporate', issued: '2025-01-01', expires: '2028-01-01', issuer: 'GiftsChecker Inc.' },
+  'GC-2025-ECHO':   { status: 'valid',   balance: 75.00,  currency: 'USD', type: 'Premium',   issued: '2025-04-20', expires: '2027-04-20', issuer: 'GiftsChecker Inc.' },
+  'GC-2025-FOXTROT':{ status: 'valid',   balance: 150.00, currency: 'USD', type: 'Corporate', issued: '2025-07-07', expires: '2028-07-07', issuer: 'GiftsChecker Inc.' },
+  'DEMO-VALID-001': { status: 'valid',   balance: 50.00,  currency: 'USD', type: 'Demo',      issued: '2025-01-01', expires: '2027-01-01', issuer: 'GiftsChecker Inc.' },
+  'DEMO-VALID-002': { status: 'valid',   balance: 120.00, currency: 'USD', type: 'Demo',      issued: '2025-06-15', expires: '2027-06-15', issuer: 'GiftsChecker Inc.' },
 
   // Expired cards
-  'GC-2020-ZULU':   { status: 'expired', balance: 0.00,   currency: 'USD', type: 'Retail',    issued: '2020-03-01', expires: '2022-03-01', issuer: 'GiftCheck Inc.' },
-  'GC-2021-YANKEE': { status: 'expired', balance: 0.00,   currency: 'USD', type: 'Retail',    issued: '2021-05-10', expires: '2023-05-10', issuer: 'GiftCheck Inc.' },
-  'DEMO-EXPIRED-01':{ status: 'expired', balance: 0.00,   currency: 'USD', type: 'Demo',      issued: '2022-01-01', expires: '2024-01-01', issuer: 'GiftCheck Inc.' },
+  'GC-2020-ZULU':   { status: 'expired', balance: 0.00,   currency: 'USD', type: 'Retail',    issued: '2020-03-01', expires: '2022-03-01', issuer: 'GiftsChecker Inc.' },
+  'GC-2021-YANKEE': { status: 'expired', balance: 0.00,   currency: 'USD', type: 'Retail',    issued: '2021-05-10', expires: '2023-05-10', issuer: 'GiftsChecker Inc.' },
+  'DEMO-EXPIRED-01':{ status: 'expired', balance: 0.00,   currency: 'USD', type: 'Demo',      issued: '2022-01-01', expires: '2024-01-01', issuer: 'GiftsChecker Inc.' },
 
   // Invalid / fraudulent cards
   'FAKE-CARD-0001': { status: 'invalid', balance: 0.00,   currency: 'USD', type: 'Unknown',   issued: 'N/A',        expires: 'N/A',        issuer: 'Unknown'        },
@@ -83,7 +83,7 @@ function deriveResult(rawId) {
       type:     ['Retail', 'Premium', 'Corporate'][(h % 3)],
       issued:   `${issuedYear}-${month}-${day}`,
       expires:  `${expiresYear}-${month}-${day}`,
-      issuer:   'GiftCheck Inc.',
+      issuer:   'GiftsChecker Inc.',
     };
   }
 
@@ -96,7 +96,7 @@ function deriveResult(rawId) {
       type:     ['Retail', 'Premium'][(h % 2)],
       issued:   `${2020 + (h % 3)}-${String((h % 12) + 1).padStart(2, '0')}-01`,
       expires:  `${2022 + (h % 2)}-${String((h % 12) + 1).padStart(2, '0')}-01`,
-      issuer:   'GiftCheck Inc.',
+      issuer:   'GiftsChecker Inc.',
     };
   }
 
@@ -226,9 +226,9 @@ function getStatusCopy(status) {
   return map[status] || map.invalid;
 }
 
-/* Expose to other modules via the global GiftCheck namespace */
-window.GiftCheck = window.GiftCheck || {};
-Object.assign(window.GiftCheck, {
+/* Expose to other modules via the global GiftsChecker namespace */
+window.GiftsChecker = window.GiftsChecker || {};
+Object.assign(window.GiftsChecker, {
   verifyCard,
   validateCardId,
   formatBalance,

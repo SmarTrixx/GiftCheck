@@ -65,8 +65,8 @@
   --font-primary:          'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
   --font-mono:             'Courier New', 'Courier', monospace;
  
-  --text-xs:    0.85rem;    /* 12px */
-  --text-sm:    0.975rem;   /* 14px */
+  --text-xs:    0.75rem;    /* 12px */
+  --text-sm:    0.965rem;   /* 14px */
   --text-base:  1rem;       /* 16px */
   --text-lg:    1.125rem;   /* 18px */
   --text-xl:    1.25rem;    /* 20px */
@@ -116,46 +116,6 @@
 /* ───────────────────────────────────────────────────────────
    DARK THEME — Applied when [data-theme="dark"]
    ─────────────────────────────────────────────────────────── */
-[data-theme="dark"] {
-  color-scheme: dark;
-
-  /* Colours — Dark palette */
-  --color-bg-primary:      #0d1b2a;
-  --color-bg-secondary:    #112236;
-  --color-bg-card:         #142840;
-  --color-bg-elevated:     #1a3050;
-  --color-bg-overlay:      rgba(7, 14, 22, 0.82);
-
-  --color-accent:          #f77f00;
-  --color-accent-hover:    #e07200;
-  --color-accent-light:    rgba(247, 127, 0, 0.12);
-  --color-accent-subtle:   rgba(247, 127, 0, 0.06);
-
-  --color-text-primary:    #f0f4f8;
-  --color-text-secondary:  #8caac4;
-  --color-text-muted:      #8ea8be;
-  --color-text-inverse:    #0d1b2a;
-
-  --color-border:          rgba(255, 255, 255, 0.07);
-  --color-border-focus:    rgba(247, 127, 0, 0.5);
-
-  --color-success:         #22c55e;
-  --color-success-bg:      rgba(34, 197, 94, 0.1);
-  --color-error:           #ef4444;
-  --color-error-bg:        rgba(239, 68, 68, 0.1);
-  --color-warning:         #f59e0b;
-  --color-warning-bg:      rgba(245, 158, 11, 0.1);
-
-  /* Shadows — Darker for dark theme */
-  --shadow-sm:   0 1px 3px rgba(0, 0, 0, 0.3);
-  --shadow-md:   0 4px 12px rgba(0, 0, 0, 0.4);
-  --shadow-lg:   0 8px 32px rgba(0, 0, 0, 0.5);
-  --shadow-xl:   0 16px 48px rgba(0, 0, 0, 0.6);
-  --shadow-accent: 0 4px 20px rgba(247, 127, 0, 0.25);
-
-  /* Navigation */
-  --nav-bg-rgb: 13, 27, 42;
-}
 
 /* ------------------------------------------------------------
    3. Reset & Base
@@ -452,23 +412,6 @@ input, textarea, select {
   width: 100%;
 }
 
-/* Theme Toggle Button */
-.btn-theme-toggle {
-  width: 40px;
-  height: 40px;
-  border-radius: var(--radius-md);
-  background-color: transparent;
-  border: 1.5px solid var(--color-border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background-color var(--transition-fast),
-              border-color var(--transition-fast),
-              color var(--transition-fast);
-  color: var(--color-text-secondary);
-  position: relative;
-}
 
 .btn-theme-toggle:hover {
   background-color: rgba(247, 127, 0, 0.08);
@@ -2895,7 +2838,7 @@ input, textarea, select {
   display: flex;
   align-items: flex-start;
   gap: var(--space-3);
-  margin-top: var(--space-5);
+  margin-top: var(--space-2);
   font-size: var(--text-xs);
   color: var(--color-text-muted);
   line-height: var(--leading-relaxed);
