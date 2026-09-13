@@ -949,6 +949,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initFaq();
   initNav();
   initScrollReveal();
-  initChatWidget();
+  // initChatWidget(); // Disabled - Using HubSpot live chat instead
   initTestimonialsCarousel();
 });
